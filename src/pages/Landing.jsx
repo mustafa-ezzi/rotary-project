@@ -46,7 +46,7 @@ const Landing = () => {
                             </ul>
 
                             <div className="mt-6 flex gap-4">
-                                <Link to="/start" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg">
+                                <Link to="/bank-verification" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg">
                                     Start Simulation
                                 </Link>
                                 <a href="#how" className="inline-block border border-gray-200 py-3 px-6 rounded-lg text-gray-700 hover:bg-gray-50">
