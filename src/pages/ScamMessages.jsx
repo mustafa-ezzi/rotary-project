@@ -425,7 +425,7 @@ const ScamMessages = () => {
               Back to Home
             </button>
             <button
-              onClick={() => navigate("/bank-verification")}
+              onClick={() => navigate("/scam-detection")}
               className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-2"
             >
               Test Your Detection Skills
