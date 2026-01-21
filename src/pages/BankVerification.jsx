@@ -416,7 +416,7 @@ const BankVerification = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

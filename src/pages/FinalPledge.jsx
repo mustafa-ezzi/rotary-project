@@ -40,10 +40,10 @@ const FinalPledge = () => {
 
   if (pledged) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex flex-col items-center justify-center px-4 sm:px-6 text-white relative overflow-hidden">
+      <div className=" min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex flex-col items-center justify-center px-4 sm:px-6 text-white relative overflow-hidden">
         
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute  inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
@@ -142,7 +142,7 @@ const FinalPledge = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 ">
               <button
                 onClick={shareMessage}
                 className="flex-1 group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
@@ -162,7 +162,7 @@ const FinalPledge = () => {
           </div>
 
           {/* Footer Badge */}
-          <div className="text-center">
+          <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
               <Heart className="w-4 h-4 text-red-400" />
               <span className="text-sm text-gray-300">
@@ -310,7 +310,7 @@ const FinalPledge = () => {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 ">
           <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
             <Heart className="w-4 h-4 text-red-400" />
             <span className="text-sm text-gray-300">
