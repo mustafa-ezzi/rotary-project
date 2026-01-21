@@ -9,6 +9,8 @@ import LegitTricks from "./pages/LegitTricks";
 import ScamMessages from "./pages/ScamMessages";
 import FinalPledge from "./pages/FinalPledge";
 import LandingPage from "./pages/Landing";
+import ScamDetect from "./pages/ScamDetectionTest";
+
 
 import Roadmap from "./pages/Roadmap";
 import Navbar from "./components/Navbar";
@@ -33,6 +35,8 @@ function App() {
           <Route path="/how-it-looks-legit" element={<LegitTricks />} />
           <Route path="/scam-messages" element={<ScamMessages />} />
           <Route path="/final-pledge" element={<FinalPledge />} />
+          <Route path="/scam-detection" element={<ScamDetect />} />
+
 
           <Route path="/roadmap" element={<Roadmap />} />
         </Routes>
