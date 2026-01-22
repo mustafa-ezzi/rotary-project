@@ -11,9 +11,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="bg-gradient-to-br from-purple-500 to-blue-500 p-2 rounded-xl group-hover:scale-110 transition-transform duration-300">
-              <Shield className="w-8 h-8 text-white" />
-            </div>
+           <div className=" p-2 rounded-xl group-hover:scale-110 transition-transform duration-300">
+  <img 
+    src="/cybershield.png" 
+    alt="CyberShield Logo"
+    className="w-10 h-14 object-contain"
+  />
+</div>
+
             <div className="flex flex-col">
               <span className="font-bold text-xl text-white">CyberShield</span>
               <span className="text-xs text-purple-300">Security Training</span>
