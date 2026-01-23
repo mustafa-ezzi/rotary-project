@@ -153,7 +153,7 @@ const DataFlow = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Animated Background */}
+      
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -163,7 +163,7 @@ const DataFlow = () => {
       <div className="relative z-10 px-4 sm:px-6 py-12 sm:py-16 flex justify-center">
         <div className="max-w-6xl w-full">
           
-          {/* Header */}
+          
           <div className="text-center mb-12 sm:mb-16">
             <div className="flex justify-center mb-6">
               <div className="relative">
@@ -188,9 +188,9 @@ const DataFlow = () => {
             </div>
           </div>
 
-          {/* Timeline Flow */}
+          
           <div className="relative mb-16">
-            {/* Vertical Timeline Line */}
+            
             <div className="absolute left-8 sm:left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-red-600 via-orange-600 to-purple-600"></div>
 
             <div className="space-y-8 sm:space-y-12">
@@ -201,7 +201,7 @@ const DataFlow = () => {
                     activeStep >= index ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
                   }`}
                 >
-                  {/* Timeline Node */}
+                  
                   <div className="absolute left-0 sm:left-4 flex items-center justify-center">
                     <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-${step.color}-600 to-${step.color}-800 flex items-center justify-center border-4 border-black shadow-2xl ${
                       activeStep >= index ? 'animate-pulse' : ''
@@ -210,12 +210,12 @@ const DataFlow = () => {
                     </div>
                   </div>
 
-                  {/* Content Card */}
+                  
                   <div className="ml-20 sm:ml-32">
                     <div className={`bg-gradient-to-br from-gray-900 to-${step.color}-900/20 border-2 border-${step.color}-600/50 rounded-2xl p-6 sm:p-8 hover:border-${step.color}-600/80 transition-all ${
                       step.critical ? 'ring-2 ring-red-500 ring-offset-2 ring-offset-black' : ''
                     }`}>
-                      {/* Header */}
+                      
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
                         <div>
                           <div className="flex items-center gap-3 mb-2">
@@ -234,12 +234,12 @@ const DataFlow = () => {
                         </div>
                       </div>
 
-                      {/* Description */}
+                      
                       <p className="text-gray-300 mb-6 text-sm sm:text-base leading-relaxed">
                         {step.description}
                       </p>
 
-                      {/* Details List */}
+                      
                       <div className="bg-black/40 rounded-xl p-4 sm:p-6 mb-4">
                         <h3 className="text-sm font-semibold text-gray-400 mb-3 flex items-center gap-2">
                           <Eye className="w-4 h-4" />
@@ -255,7 +255,7 @@ const DataFlow = () => {
                         </ul>
                       </div>
 
-                      {/* JSON Code Sample for Step 2 */}
+                      
                       {step.showJson && activeStep >= index && (
                         <div className="mt-4">
                           <div className="flex items-center justify-between mb-3">
@@ -278,7 +278,7 @@ const DataFlow = () => {
                         </div>
                       )}
 
-                      {/* Critical Warning */}
+                      
                       {step.critical && (
                         <div className="bg-red-600/20 border-2 border-red-500 rounded-xl p-4 flex items-start gap-3">
                           <ShieldOff className="w-6 h-6 text-red-500 flex-shrink-0 animate-pulse" />
@@ -297,7 +297,7 @@ const DataFlow = () => {
             </div>
           </div>
 
-          {/* Impact Statistics */}
+          
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-gradient-to-br from-red-900/40 to-red-800/20 border-2 border-red-600/50 rounded-2xl p-6 text-center">
               <Globe className="w-12 h-12 text-red-400 mx-auto mb-3" />
@@ -324,7 +324,7 @@ const DataFlow = () => {
             </div>
           </div>
 
-          {/* Final Message */}
+          
           <div className="bg-gradient-to-br from-gray-900 to-red-900/30 border-2 border-red-600/50 rounded-3xl p-8 sm:p-12 text-center mb-12">
             <AlertTriangle className="w-16 h-16 text-red-500 mx-auto mb-6 animate-pulse" />
             <h3 className="text-2xl sm:text-3xl font-bold text-red-400 mb-4">
@@ -339,7 +339,7 @@ const DataFlow = () => {
             </div>
           </div>
 
-          {/* Action Buttons */}
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => navigate("/")}
@@ -358,7 +358,7 @@ const DataFlow = () => {
             </button>
           </div>
 
-          {/* Footer */}
+          
           <div className="mt-12 text-center">
             <p className="text-sm text-gray-500">
               Educational simulation showing real criminal data handling processes

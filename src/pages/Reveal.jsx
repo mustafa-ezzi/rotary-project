@@ -19,7 +19,7 @@ const Reveal = () => {
   useEffect(() => {
     document.body.classList.add("bg-black");
 
-    // Staggered reveal animation
+
     setTimeout(() => setShowContent(true), 500);
     setTimeout(() => setAnimateCards(true), 1500);
 
@@ -98,7 +98,7 @@ const Reveal = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Animated Background */}
+
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -107,7 +107,7 @@ const Reveal = () => {
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-16">
         <div className="max-w-6xl w-full">
 
-          {/* Main Reveal Header */}
+
           <div className={`text-center mb-12 transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
             <div className="flex justify-center mb-6">
               <div className="relative">
@@ -132,7 +132,7 @@ const Reveal = () => {
             </div>
           </div>
 
-          {/* Exposed Data Grid */}
+
           <div className={`mb-12 transition-all duration-1000 delay-300 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="bg-gradient-to-br from-gray-900 to-red-900/30 border-2 border-red-600/50 rounded-3xl p-8 backdrop-blur-xl">
               <div className="text-center mb-6">
@@ -174,7 +174,7 @@ const Reveal = () => {
             </div>
           </div>
 
-          {/* Consequences Grid */}
+
           <div className={`mb-12 transition-all duration-1000 delay-500 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
@@ -207,7 +207,7 @@ const Reveal = () => {
             </div>
           </div>
 
-          {/* Red Flags Section */}
+
           <div className={`mb-12 transition-all duration-1000 delay-700 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="bg-gradient-to-br from-green-900/30 to-blue-900/30 border-2 border-green-600/50 rounded-3xl p-8 backdrop-blur-xl">
               <div className="text-center mb-6">
@@ -232,7 +232,7 @@ const Reveal = () => {
             </div>
           </div>
 
-          {/* Critical Message */}
+
           <div className={`mb-12 transition-all duration-1000 delay-900 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="bg-gradient-to-r from-red-600/20 to-orange-600/20 border-2 border-red-500 rounded-3xl p-8 text-center backdrop-blur-xl">
               <AlertTriangle className="w-16 h-16 text-red-500 mx-auto mb-4 animate-pulse" />
@@ -251,7 +251,7 @@ const Reveal = () => {
             </div>
           </div>
 
-          {/* Action Buttons */}
+
           <div className={`text-center space-y-4 transition-all duration-1000 delay-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <button

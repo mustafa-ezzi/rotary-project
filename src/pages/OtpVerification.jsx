@@ -4,8 +4,8 @@ import { Shield, Lock, AlertTriangle, Clock, CheckCircle, MessageSquare, Refresh
 
 const OtpVerification = () => {
   const navigate = useNavigate();
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
-  const [timeLeft, setTimeLeft] = useState(120); // 2 minutes
+  const [otp, setOtp] = useState(["", "", "", ""]);
+  const [timeLeft, setTimeLeft] = useState(120);
   const [canResend, setCanResend] = useState(false);
   const [attempts, setAttempts] = useState(0);
   const [isResending, setIsResending] = useState(false);
@@ -39,12 +39,12 @@ const OtpVerification = () => {
 
   const handleChange = (index, value) => {
     if (value.length > 1) return;
-    
+
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
 
-    // Auto-focus next input
+
     if (value && index < 5) {
       inputRefs.current[index + 1]?.focus();
     }
@@ -61,8 +61,8 @@ const OtpVerification = () => {
     const pastedData = e.clipboardData.getData("text").slice(0, 6);
     const newOtp = pastedData.split("");
     setOtp([...newOtp, ...Array(6 - newOtp.length).fill("")]);
-    
-    // Focus the next empty input or last input
+
+
     const nextIndex = Math.min(newOtp.length, 5);
     inputRefs.current[nextIndex]?.focus();
   };
@@ -82,7 +82,7 @@ const OtpVerification = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const otpValue = otp.join("");
-    if (otpValue.length === 6) {
+    if (otpValue.length === 4) {
       navigate("/reveal");
     }
   };
@@ -90,7 +90,7 @@ const OtpVerification = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-white to-blue-50 px-4 py-8">
       <div className="max-w-2xl w-full">
-        {/* Security Badge */}
+
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-300 rounded-full px-6 py-2">
             <MessageSquare className="w-5 h-5 text-blue-600" />
@@ -99,7 +99,7 @@ const OtpVerification = () => {
         </div>
 
         <div className="bg-white shadow-2xl rounded-3xl overflow-hidden border border-gray-200">
-          {/* Header Banner */}
+
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -114,7 +114,7 @@ const OtpVerification = () => {
           </div>
 
           <div className="p-8 sm:p-12">
-            {/* Icon and Title */}
+
             <div className="text-center mb-8">
               <div className="flex justify-center mb-4">
                 <div className="bg-gradient-to-br from-blue-500 to-purple-500 p-6 rounded-2xl shadow-lg">
@@ -129,7 +129,7 @@ const OtpVerification = () => {
               </p>
             </div>
 
-            {/* Timer Warning */}
+
             {showWarning && timeLeft > 0 && (
               <div className="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-4 mb-6 flex items-start gap-3 animate-pulse">
                 <AlertTriangle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
@@ -140,12 +140,11 @@ const OtpVerification = () => {
               </div>
             )}
 
-            {/* Countdown Timer */}
-            <div className={`rounded-2xl p-6 mb-8 text-center transition-all ${
-              timeLeft <= 30 
-                ? 'bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-300' 
+
+            <div className={`rounded-2xl p-6 mb-8 text-center transition-all ${timeLeft <= 30
+                ? 'bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-300'
                 : 'bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200'
-            }`}>
+              }`}>
               <div className="flex justify-center mb-3">
                 <Clock className={`w-8 h-8 ${timeLeft <= 30 ? 'text-red-600 animate-pulse' : 'text-blue-600'}`} />
               </div>
@@ -160,7 +159,7 @@ const OtpVerification = () => {
               )}
             </div>
 
-            {/* OTP Input Form */}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-4 text-center">
@@ -185,7 +184,7 @@ const OtpVerification = () => {
                 </div>
               </div>
 
-              {/* Attempts Counter */}
+
               {attempts > 0 && (
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-center">
                   <p className="text-sm text-yellow-800">
@@ -194,7 +193,7 @@ const OtpVerification = () => {
                 </div>
               )}
 
-              {/* Resend Section */}
+
               <div className="bg-gray-50 rounded-xl p-4 text-center">
                 <p className="text-sm text-gray-600 mb-3">
                   Didn't receive the code?
@@ -216,7 +215,7 @@ const OtpVerification = () => {
                 )}
               </div>
 
-              {/* Security Warning */}
+
               <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
                 <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -227,7 +226,7 @@ const OtpVerification = () => {
                 </div>
               </div>
 
-              {/* Submit Button */}
+
               <button
                 type="submit"
                 disabled={otp.some(digit => !digit)}
@@ -239,7 +238,7 @@ const OtpVerification = () => {
               </button>
             </form>
 
-            {/* Help Section */}
+
             <div className="mt-8 pt-6 border-t border-gray-200">
               <div className="bg-blue-50 rounded-xl p-4 text-center">
                 <p className="text-sm font-semibold text-blue-800 mb-2">Need Help?</p>
@@ -259,7 +258,7 @@ const OtpVerification = () => {
               </div>
             </div>
 
-            {/* Trust Indicators */}
+
             <div className="mt-6 flex items-center justify-center gap-6 text-xs text-gray-500">
               <div className="flex items-center gap-1">
                 <Shield className="w-4 h-4 text-green-600" />
@@ -277,7 +276,7 @@ const OtpVerification = () => {
           </div>
         </div>
 
-        {/* Footer Note */}
+
         <div className="mt-6 text-center">
           <p className="text-xs text-gray-500">
             This verification protects your account from unauthorized access

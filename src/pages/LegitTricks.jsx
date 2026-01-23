@@ -235,7 +235,6 @@ const LegitTricks = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         
-        {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/30 rounded-full px-6 py-2 mb-6">
             <AlertTriangle className="w-5 h-5 text-red-400" />
@@ -253,7 +252,6 @@ const LegitTricks = () => {
             These are not mistakes. They are <span className="text-red-400 font-bold">calculated psychological weapons</span> designed to exploit how your brain works.
           </p>
 
-          {/* Tab Navigation */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <button
               onClick={() => setActiveTab('tricks')}
@@ -288,7 +286,6 @@ const LegitTricks = () => {
           </div>
         </div>
 
-        {/* Deception Tactics Tab */}
         {activeTab === 'tricks' && (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {tricks.map((trick, index) => (
@@ -337,7 +334,6 @@ const LegitTricks = () => {
           </div>
         )}
 
-        {/* Psychology Tab */}
         {activeTab === 'psychology' && (
           <div className="mb-16">
             <div className="text-center mb-12">
@@ -368,7 +364,6 @@ const LegitTricks = () => {
           </div>
         )}
 
-        {/* Defense Strategies Tab */}
         {activeTab === 'defense' && (
           <div className="mb-16">
             <div className="text-center mb-12">
@@ -396,7 +391,6 @@ const LegitTricks = () => {
           </div>
         )}
 
-        {/* Bottom CTA */}
         <div className="bg-gradient-to-r from-red-600/20 to-orange-600/20 border-2 border-red-500 rounded-3xl p-8 sm:p-12 text-center backdrop-blur-xl mb-12">
           <AlertTriangle className="w-16 h-16 text-red-500 mx-auto mb-6 animate-pulse" />
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">

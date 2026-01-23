@@ -1,108 +1,75 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Shield, Mail, ExternalLink, Heart } from "lucide-react";
+import { Mail, Heart, ExternalLink, ShieldCheck } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 border-t border-purple-500/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Brand Section */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-gradient-to-br from-purple-500 to-blue-500 p-2 rounded-xl">
-                <Shield className="w-6 h-6 text-white" />
-              </div>
+    // Changed: Uses slate-950 for a clean, neutral "grounding" effect
+    <footer className="w-full bg-slate-950 border-t border-white/5 relative overflow-hidden">
+      {/* Subtle Glow Effect for Purple Blending */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+      
+      <div className="max-w-6xl mx-auto px-6 py-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          
+          {/* Brand Info */}
+          <div className="md:col-span-2 space-y-4">
+            <div className="flex items-center gap-3">
+              <img src="/cybershield.png" alt="Logo" className="w-8 h-10 object-contain" />
               <div className="flex flex-col">
                 <span className="font-bold text-lg text-white">CyberShield</span>
-                <span className="text-xs text-purple-300">Security Training Platform</span>
+                <span className="text-xs text-slate-500">Professional Security Awareness</span>
               </div>
             </div>
-            <p className="text-gray-400 text-sm mb-4 max-w-md">
-              Empowering individuals and organizations to recognize and prevent scams through realistic, safe simulations and comprehensive training.
+            <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
+              Empowering individuals and organizations with the knowledge to stay safe in an increasingly complex digital world.
             </p>
-            <div className="flex items-center gap-2 text-sm text-gray-400">
-              <Mail className="w-4 h-4" />
-              <a href="mailto:info@CyberShield.com" className="hover:text-purple-400 transition-colors">
-                info@CyberShield.com
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/bank-verification" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
-                  Start Training
-                </Link>
-              </li>
-              <li>
-                <Link to="/teams" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
-                  For Teams
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/privacy" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
-                  Terms & Conditions
-                </Link>
-              </li>
-              <li>
-                <Link to="/disclaimer" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
-                  Disclaimer
-                </Link>
-              </li>
-            </ul>
+          <div className="grid grid-cols-2 gap-8 md:col-span-2">
+            <div className="space-y-4">
+              <h4 className="text-white font-semibold text-sm uppercase tracking-wider">Navigation</h4>
+              <nav className="flex flex-col gap-2 text-sm text-slate-400">
+                <Link to="/" className="hover:text-purple-400 transition-colors">Home Overview</Link>
+                <Link to="/bank-verification" className="hover:text-purple-400 transition-colors">Training Lab</Link>
+                <Link to="/contact" className="hover:text-purple-400 transition-colors">Support Center</Link>
+              </nav>
+            </div>
+            <div className="space-y-4">
+              <h4 className="text-white font-semibold text-sm uppercase tracking-wider">Legal</h4>
+              <nav className="flex flex-col gap-2 text-sm text-slate-400">
+                <Link to="/privacy" className="hover:text-purple-400 transition-colors">Privacy Policy</Link>
+                <Link to="/terms" className="hover:text-purple-400 transition-colors">Terms of Service</Link>
+                <div className="flex items-center gap-2 mt-2 text-xs text-slate-500">
+                  <Mail className="w-3 h-3" />
+                  <span>info@cybershield.com</span>
+                </div>
+              </nav>
+            </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-purple-500/20 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Copyright */}
-            <div className="text-gray-400 text-sm text-center md:text-left">
-              © 2025 CyberShield. All rights reserved. Educational platform for security awareness.
-            </div>
-
-            {/* Developer Credit */}
-            <div className="flex items-center gap-2 text-sm">
-              <span className="text-gray-400">Designed & Developed with</span>
-              <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
-              <span className="text-gray-400">by</span>
-              <a
-                href="https://www.trisitesolutions.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-400 hover:text-green-300 font-semibold transition-colors inline-flex items-center gap-1"
-              >
-                TriSite Solutions
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4 text-xs text-slate-500">
+            <span>© {new Date().getFullYear()} CyberShield</span>
+            <span className="w-1 h-1 bg-slate-700 rounded-full"></span>
+            <span className="flex items-center gap-1">
+              <ShieldCheck className="w-3 h-3 text-green-500" /> Secure Platform
+            </span>
+          </div>
+          
+          <div className="text-xs text-slate-500 flex items-center gap-1">
+            Made with <Heart className="w-3 h-3 text-red-500 animate-pulse" /> by{" "}
+            <a 
+              href="https://www.trisitesolutions.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-slate-300 hover:text-green-400 font-bold flex items-center gap-1 transition-colors"
+            >
+              TriSite Solutions <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
         </div>
       </div>

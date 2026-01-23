@@ -11,8 +11,7 @@ import ScamMessages from "./pages/ScamMessages";
 import FinalPledge from "./pages/FinalPledge";
 import LandingPage from "./pages/Landing";
 import ScamDetect from "./pages/ScamDetectionTest";
-
-
+import ContactPage from "./pages/ContactPage";
 import Roadmap from "./pages/Roadmap";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -26,10 +25,10 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Navbar always on top */}
+      
       <Navbar />
 
-      {/* Main content */}
+      
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -43,13 +42,12 @@ function App() {
           <Route path="/scam-messages" element={<ScamMessages />} />
           <Route path="/final-pledge" element={<FinalPledge />} />
           <Route path="/scam-detection" element={<ScamDetect />} />
-
-
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/roadmap" element={<Roadmap />} />
         </Routes>
       </main>
 
-      {/* Footer always at bottom */}
+      
       <Footer />
     </div>
   );
