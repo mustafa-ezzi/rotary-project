@@ -97,7 +97,7 @@ const Navbar = () => {
           }`}
         >
           {/* Subtle blurred backdrop */}
-          <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-xl"></div>
+          <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-xl"></div>
           
           {/* Menu Content Container */}
           <div 
