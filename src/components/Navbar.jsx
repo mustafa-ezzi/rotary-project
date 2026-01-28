@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; // Added useEffect
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // FIX: Prevent background scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    // Cleanup function to ensure scroll is restored if component unmounts
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   const links = [
     { name: "Home", path: "/" },
@@ -90,18 +103,21 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* MOBILE OVERLAY MENU (Compact & Professional) */}
+        {/* MOBILE OVERLAY MENU */}
         <div
-          className={`xl:hidden fixed inset-0 w-full h-screen z-[100] transition-all duration-500 ${
+          className={`xl:hidden fixed inset-0 w-full h-screen z-[100] transition-all duration-500 overflow-hidden ${
             isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
         >
-          {/* Subtle blurred backdrop */}
-          <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-xl"></div>
+          {/* Subtle blurred backdrop - Click to close */}
+          <div 
+            className="absolute inset-0 bg-slate-950/90 backdrop-blur-xl"
+            onClick={() => setIsOpen(false)}
+          ></div>
           
           {/* Menu Content Container */}
           <div 
-            className={`relative flex flex-col h-full w-[85%] max-w-[400px] ml-auto bg-white/[0.03] border-l border-white/10 shadow-2xl transition-transform duration-500 ease-out ${
+            className={`relative flex flex-col h-full w-[85%] max-w-[400px] ml-auto bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-500 ease-out ${
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
@@ -119,9 +135,9 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Scrollable Content */}
-            <div className="flex flex-col flex-1 overflow-y-auto p-6 no-scrollbar">
-              {/* Compact Links */}
+            {/* Scrollable Content Area */}
+            {/* Added: overscroll-contain to stop scroll bleed */}
+            <div className="flex flex-col flex-1 overflow-y-auto p-6 no-scrollbar overscroll-contain">
               <nav className="space-y-1">
                 {links.map((link, i) => (
                   <Link
@@ -141,7 +157,6 @@ const Navbar = () => {
                 ))}
               </nav>
 
-              {/* Action Button - Compact Style */}
               <div className="mt-8">
                 <Link
                   to="/bank-verification"
@@ -152,8 +167,8 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              {/* Partners Grid - Scaled Down */}
-              <div className="mt-auto pt-10">
+              {/* Partners Grid */}
+              <div className="mt-12 pb-10">
                 <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5">
                   <p className="text-[9px] uppercase tracking-[0.3em] text-slate-500 font-bold mb-5 text-center">
                     Supported By
