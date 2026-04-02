@@ -277,7 +277,7 @@ const Reveal = () => {
                 <strong className="text-green-400">Educational Simulation Only</strong>
               </p>
               <p className="text-xs text-gray-500">
-                This was part of the <strong className="text-white">ScamShield Security Awareness Program</strong>.
+                This was part of the <strong className="text-white">Cybershield Security Awareness Program</strong>.
                 No real data was collected, stored, or transmitted. This simulation exists purely to educate you
                 about the tactics scammers use and the severe consequences of falling for them.
               </p>
