@@ -52,6 +52,7 @@ const Navbar = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-black text-lg md:text-xl text-white tracking-tight leading-none">CyberShield</span>
+                <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-purple-400 font-bold mt-1">A project of RCK Safe City</span>
               </div>
             </Link>
 
@@ -104,19 +105,21 @@ const Navbar = () => {
 
         {/* MOBILE OVERLAY MENU */}
         <div
-          className={`xl:hidden fixed inset-0 w-full h-screen z-[100] transition-all duration-500 overflow-hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-            }`}
+          className={`xl:hidden fixed inset-0 w-full h-screen z-[100] transition-all duration-500 overflow-hidden ${
+            isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
         >
           {/* Subtle blurred backdrop - Click to close */}
-          <div
+          <div 
             className="absolute inset-0 bg-slate-950/90 backdrop-blur-xl"
             onClick={() => setIsOpen(false)}
           ></div>
-
+          
           {/* Menu Content Container */}
-          <div
-            className={`relative flex flex-col h-full w-[85%] max-w-[400px] ml-auto bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-500 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"
-              }`}
+          <div 
+            className={`relative flex flex-col h-full w-[85%] max-w-[400px] ml-auto bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-500 ease-out ${
+              isOpen ? "translate-x-0" : "translate-x-full"
+            }`}
           >
             {/* Header: Logo & Close Button */}
             <div className="flex items-center justify-between px-6 h-20 border-b border-white/5">
@@ -124,8 +127,8 @@ const Navbar = () => {
                 <img src="/cybershield.png" alt="Logo" className="w-6 h-8 object-contain" />
                 <span className="font-bold text-white text-sm tracking-tight">CyberShield</span>
               </div>
-              <button
-                onClick={() => setIsOpen(false)}
+              <button 
+                onClick={() => setIsOpen(false)} 
                 className="p-2 rounded-full bg-white/5 border border-white/10 text-white"
               >
                 <X className="w-5 h-5" />
@@ -144,7 +147,7 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-black text-purple-500/60 tracking-tighter">0{i + 1}</span>
+                      <span className="text-[10px] font-black text-purple-500/60 tracking-tighter">0{i+1}</span>
                       <span className="text-lg font-bold text-white/90 group-hover:text-purple-400 transition-colors">
                         {link.name}
                       </span>
