@@ -163,7 +163,7 @@ const OtpVerification = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-4 text-center">
-                  Enter 6-Digit Code
+                  Enter 4-Digit Code
                 </label>
                 <div className="flex gap-2 sm:gap-3 justify-center mb-6">
                   {otp.map((digit, index) => (

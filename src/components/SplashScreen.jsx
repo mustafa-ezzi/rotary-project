@@ -1,4 +1,5 @@
 ﻿import React from "react";
+import { Lock } from "lucide-react";
 
 const SplashScreen = ({ onComplete }) => {
   const partnerLogos = [
@@ -30,7 +31,7 @@ const SplashScreen = ({ onComplete }) => {
           />
 
           <h1 className="text-balance text-3xl font-black uppercase leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            A Project of <span className="text-blue-500">Rotaract Club</span> of Karachi
+            A Project of <span className="text-blue-500">Rotary Club</span> of Karachi
           </h1>
           <p className="mt-4 text-balance text-lg font-semibold uppercase tracking-wide text-purple-400 sm:mt-5 sm:text-2xl md:text-3xl lg:text-4xl">
             Designed &amp; Presented by Rotary Club of Karachi
