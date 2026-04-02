@@ -65,14 +65,14 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
       <div className="max-w-6xl mx-auto">
         
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             Get in <span className="text-blue-600">Touch</span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto">
             Connecting you with humanitarian leaders across Pakistan and providing essential support for digital safety.
           </p>
         </div>
@@ -83,7 +83,7 @@ const ContactPage = () => {
             <section>
               <div className="flex items-center space-x-2 mb-6">
                 <Users className="text-blue-600 w-8 h-8" />
-                <h2 className="text-3xl font-bold text-slate-800">Rotary Pakistan</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-800">Rotary Pakistan</h2>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">

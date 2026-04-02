@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-slate-900/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10 shadow-2xl">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8 2xl:px-10">
         <div className="flex items-center justify-between h-20 md:h-24">
 
           {/* LEFT: Brand Section */}

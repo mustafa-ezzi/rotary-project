@@ -52,7 +52,7 @@ const FinalPledge = () => {
 
   if (pledged) {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center px-4 py-12 text-white relative overflow-hidden">
+      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center px-4 py-10 sm:py-12 text-white relative overflow-hidden">
         
         <div className="absolute inset-0 z-0">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-600/20 rounded-full blur-[120px]"></div>
@@ -70,7 +70,7 @@ const FinalPledge = () => {
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/50 mb-6">
                 <ShieldCheck className="w-10 h-10 text-emerald-400" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 tracking-tight">
                 Pledge <span className="text-emerald-400">Verified</span>
               </h1>
               <p className="text-slate-400 font-medium">Digital Awareness Certificate of Completion</p>
@@ -128,7 +128,7 @@ const FinalPledge = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 py-16 px-4 flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen bg-slate-950 py-12 sm:py-16 px-4 flex flex-col items-center justify-center relative overflow-hidden">
       
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-5%] right-[-5%] w-[50%] h-[50%] bg-red-900/20 rounded-full blur-[120px]"></div>
@@ -140,10 +140,10 @@ const FinalPledge = () => {
           <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/50 px-4 py-2 rounded-full text-red-500 text-xs font-bold uppercase tracking-widest mb-6 animate-pulse">
             <ShieldAlert size={14} /> Critical Action Required
           </div>
-          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6">
+          <h1 className="text-3xl sm:text-5xl xl:text-7xl font-black text-white tracking-tighter mb-6">
             THE FINAL <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">DEFENSE.</span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Education is the shield, but <span className="text-white font-bold">action</span> is the sword. Choose your commitments to finalize your training.
           </p>
         </div>
@@ -210,7 +210,7 @@ const FinalPledge = () => {
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-4 text-slate-500">
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <div className="flex items-center gap-2 text-xs"><Smartphone size={14} /> Device Secured</div>
             <div className="flex items-center gap-2 text-xs"><Lock size={14} /> Identity Protected</div>
             <div className="flex items-center gap-2 text-xs"><Shield size={14} /> Fraud Aware</div>

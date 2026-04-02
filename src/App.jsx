@@ -34,7 +34,7 @@ function App() {
         <SplashScreen onComplete={() => setLoading(false)} />
       ) : (
         /* 2. Show Main App once loading is false */
-        <div className="flex flex-col min-h-screen animate-in fade-in duration-1000">
+        <div className="flex min-h-screen w-full flex-col overflow-x-hidden animate-in fade-in duration-1000">
           <Navbar />
 
           <main className="flex-grow">

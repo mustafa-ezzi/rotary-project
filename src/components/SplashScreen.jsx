@@ -29,10 +29,10 @@ const SplashScreen = ({ onComplete }) => {
             className="mx-auto mb-5 h-28 w-auto object-contain sm:mb-6 sm:h-32 md:h-36 lg:h-40"
           />
 
-          <h1 className="text-balance text-3xl font-black uppercase leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-5xl">
-            A Project of Rotary Club of Karachi
+          <h1 className="text-balance text-3xl font-black uppercase leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            A Project of <span className="text-blue-500">Rotaract Club</span> of Karachi
           </h1>
-          <p className="mt-4 text-balance text-lg font-semibold uppercase tracking-wide text-slate-200 sm:mt-5 sm:text-2xl md:text-3xl lg:text-2xl">
+          <p className="mt-4 text-balance text-lg font-semibold uppercase tracking-wide text-purple-400 sm:mt-5 sm:text-2xl md:text-3xl lg:text-4xl">
             Designed &amp; Presented by Rotary Club of Karachi
           </p>
 
