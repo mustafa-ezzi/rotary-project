@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -65,12 +68,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* Firefox */
-html, body {
+html,
+body {
   scrollbar-width: thin;
-  scrollbar-color: rgba(139,92,246,0.4) transparent;
+  scrollbar-color: rgba(139, 92, 246, 0.4) transparent;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(139,92,246,0.4) transparent;
+  scrollbar-color: rgba(139, 92, 246, 0.4) transparent;
 }
