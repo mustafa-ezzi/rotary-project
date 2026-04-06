@@ -26,7 +26,7 @@ a:hover {
 html,
 body {
   scrollbar-width: thin;
-  scrollbar-color: rgba(139, 92, 246, 0.4) transparent;
+  /* scrollbar-color: rgba(139, 92, 246, 0.4) transparent; */
 }
 
 html::-webkit-scrollbar,
@@ -103,5 +103,5 @@ button:focus-visible {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(139, 92, 246, 0.4) transparent;
+  /* scrollbar-color: rgba(139, 92, 246, 0.4) transparent; */
 }

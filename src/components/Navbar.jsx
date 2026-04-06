@@ -27,7 +27,7 @@ const Navbar = () => {
     { name: "Presenter", path: "/presenter" },
     { name: "Roadmap", path: "/roadmap" },
     { name: "Reveal", path: "/reveal" },
-    { name: "Contact", path: "/contact" },
+    // { name: "Contact", path: "/contact" },
   ];
 
   const partnerLogos = [

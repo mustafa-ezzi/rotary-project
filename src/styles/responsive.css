@@ -38,3 +38,18 @@ button {
   overflow-wrap: anywhere;
 }
 
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0d1120; }
+::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 999px;
+  box-shadow: 0 0 8px #8b5cf6, 0 0 16px rgba(139,92,246,0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+  box-shadow: 0 0 12px #a78bfa, 0 0 24px rgba(167,139,250,0.6);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8b5cf6 #0d1120;
+}
