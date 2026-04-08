@@ -32,7 +32,7 @@ const Navbar = () => {
     { name: "Presenter", path: "/presenter" },
     { name: "Roadmap", path: "/roadmap" },
     { name: "Reveal", path: "/reveal" },
-    { name: "Contact", path: "/contact" },
+    { name: "Cybercrime Cell", path: "/contact" },
     { name: "About Rotary", path: "/about-rotary" },
   ];
 
@@ -194,10 +194,20 @@ const Navbar = () => {
           display: flex; align-items: center; justify-content: center;
           width: 40px; height: 40px; border-radius: 10px;
           background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28);
-          color: #fff; cursor: pointer; flex-shrink: 0; margin-left: auto;
+          color: #ffffff; cursor: pointer; flex-shrink: 0; margin-left: auto;
           transition: background 0.18s;
+          padding: 0;
+          outline: none;
         }
         .ham-btn:hover { background: rgba(255,255,255,0.22); }
+        .ham-btn svg { 
+          width: 20px !important; 
+          height: 20px !important; 
+          stroke: currentColor;
+          stroke-width: 2.5;
+          color: #ffffff;
+          display: block;
+        }
         @media (min-width: 1536px) { .ham-btn { display: none; } }
 
         /* ══ DRAWER OVERLAY ══ */
@@ -276,8 +286,8 @@ const Navbar = () => {
           </div>
 
           {/* Hamburger */}
-          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu" className="ham-btn">
-            {isOpen ? <X size={18} /> : <Menu size={18} />}
+          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu" className="ham-btn" style={{ background: "rgba(255,255,255,0.14)" }}>
+            {isOpen ? <X size={20} strokeWidth={2.5} /> : <Menu size={20} strokeWidth={2.5} />}
           </button>
         </div>
       </nav>
