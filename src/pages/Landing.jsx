@@ -31,7 +31,7 @@ const Landing = () => {
                             </h1>
 
                             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 px-4 leading-relaxed">
-                                Rotary  is on a mission to educate students, families, and communities about online scams, fraud, and digital risks.
+                                Objective of this program is to educate students, families, and communities about online scams, fraud, and digital risks.
                                 Through real-life examples and safe simulations, we help you recognize red flags before it's too late.
                             </p>
 
