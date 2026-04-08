@@ -83,6 +83,11 @@ const SplashScreen = ({ onComplete }) => {
         {/* Main content - centered */}
         <div className="relative z-10 w-full max-w-4xl h-screen flex flex-col items-center justify-center text-center px-4">
 
+          {/* Welcome heading */}
+          <h1 className="cs-brand-text text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Welcome to CyberShield
+          </h1>
+
           {/* Partner logos - larger and centered */}
           <div className="mb-12 flex items-center justify-center">
             {partnerLogos.map((logo) => (
