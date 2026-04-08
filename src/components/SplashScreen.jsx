@@ -65,19 +65,19 @@ const SplashScreen = ({ onComplete }) => {
         }
       `}</style>
 
-      <div className="cs-body fixed inset-0 z-[9999] flex items-center justify-center bg-[#070b18] px-4 py-4 sm:px-6 overflow-hidden">
+      <div className="cs-body fixed inset-0 z-[9999] flex items-center justify-center bg-[#070b18] px-3 py-6 sm:px-6 overflow-y-auto">
 
         {/* Grid */}
         <div className="cs-grid-bg absolute inset-0 pointer-events-none" />
 
-        {/* Ambient glows */}
-        <div className="absolute left-[-100px] top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full pointer-events-none"
+        {/* Ambient glows - responsive */}
+        <div className="hidden sm:block absolute left-[-100px] top-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(236,72,153,0.16) 0%, transparent 70%)" }} />
-        <div className="absolute right-[-100px] top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full pointer-events-none"
+        <div className="hidden sm:block absolute right-[-100px] top-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)" }} />
-        <div className="absolute top-[-80px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none"
+        <div className="hidden md:block absolute top-[-80px] left-1/2 -translate-x-1/2 w-[400px] h-[200px] md:w-[600px] md:h-[300px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)" }} />
-        <div className="absolute bottom-[-80px] left-1/2 -translate-x-1/2 w-[500px] h-[250px] rounded-full pointer-events-none"
+        <div className="hidden md:block absolute bottom-[-80px] left-1/2 -translate-x-1/2 w-[350px] h-[180px] md:w-[500px] md:h-[250px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(96,165,250,0.08) 0%, transparent 70%)" }} />
 
         {/* Main content - centered */}
@@ -107,9 +107,7 @@ const SplashScreen = ({ onComplete }) => {
               style={{ maxWidth: "none" }}
             />
             <div>
-              <div className="cs-brand-text text-4xl sm:text-5xl md:text-7xl">
-                CyberShield
-              </div>
+
               <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-violet-400 mt-2">
                 A Project of Rotaract Club Karachi Safe City
               </div>
@@ -126,7 +124,7 @@ const SplashScreen = ({ onComplete }) => {
           </div>
 
           {/* Heading */}
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-slate-500 mb-10">
+          <p className="text-[0.65rem] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-slate-500 mb-6 sm:mb-8 md:mb-10">
             Designed &amp; Presented by Rotary Club of Karachi
           </p>
 
@@ -134,7 +132,7 @@ const SplashScreen = ({ onComplete }) => {
           <button
             type="button"
             onClick={onComplete}
-            className="cs-btn-gradient inline-flex items-center justify-center gap-2.5 rounded-full px-12 py-4 text-sm sm:text-base font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_4px_28px_rgba(139,92,246,0.5)] focus:outline-none focus-visible:ring-4 focus-visible:ring-violet-400/50"
+            className="cs-btn-gradient inline-flex items-center justify-center gap-2.5 rounded-full px-6 sm:px-9 md:px-12 py-3 sm:py-4 text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_4px_28px_rgba(139,92,246,0.5)] focus:outline-none focus-visible:ring-4 focus-visible:ring-violet-400/50 transition-all duration-200"
           >
             Continue
             <span className="inline-flex items-center justify-center w-5 h-5 rounded-full border border-white/50 text-[12px] leading-none">
