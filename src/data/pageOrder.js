@@ -1,0 +1,16 @@
+export const pageOrder = [
+  { path: "/", label: "Home" },
+  { path: "/bank-verification", label: "Training" },
+  { path: "/verify", label: "Verification Form" },
+  { path: "/otp", label: "OTP Verification" },
+  { path: "/reveal", label: "Reveal" },
+  // { path: "/presenter", label: "Presenter" },
+  { path: "/data-flow", label: "Data Flow" },
+  { path: "/how-it-looks-legit", label: "How It Looks Legit" },
+  { path: "/scam-messages", label: "Scam Messages" },
+  { path: "/final-pledge", label: "Final Pledge" },
+  { path: "/scam-detection", label: "Scam Detection" },
+  { path: "/contact", label: "Contact Us" },
+  { path: "/roadmap", label: "Roadmap" },
+  { path: "/about-rotary", label: "About Rotary" },
+];

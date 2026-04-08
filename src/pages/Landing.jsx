@@ -24,7 +24,7 @@ const Landing = () => {
                             </div>
 
                             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-tight mb-5 sm:mb-6 px-2">
-                                 Stay Safe
+                                Stay Safe
                                 <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mt-2">
                                     From Online Scams
                                 </span>
@@ -158,12 +158,12 @@ const Landing = () => {
                                     </div>
                                 </div>
 
-                               
+
                             </div>
                         </div>
 
 
-                        
+
 
 
                         <div className="max-w-7xl mx-auto mb-12 sm:mb-16 lg:mb-20 xl:mb-24 px-4">
@@ -183,64 +183,64 @@ const Landing = () => {
                                         <div className="bg-gradient-to-br from-green-500 to-emerald-500 w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center flex-shrink-0">
                                             <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                                         </div>
-                                        <div>
-                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3">Email Phishing</h3>
+                                        <Link to="/scam-messages#email-phishing" className="flex-1 group hover:opacity-80 transition-opacity">
+                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-green-400 transition-colors cursor-pointer">Email Phishing</h3>
                                             <p className="text-sm sm:text-base lg:text-lg text-gray-400">Spot fake emails from banks, delivery services, and government agencies</p>
-                                        </div>
+                                        </Link>
                                     </div>
 
                                     <div className="flex items-start gap-4">
                                         <div className="bg-gradient-to-br from-blue-500 to-cyan-500 w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center flex-shrink-0">
                                             <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                                         </div>
-                                        <div>
-                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3">SMS Scams</h3>
+                                        <Link to="/scam-messages#sms-scams" className="flex-1 group hover:opacity-80 transition-opacity">
+                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-400 transition-colors cursor-pointer">SMS Scams</h3>
                                             <p className="text-sm sm:text-base lg:text-lg text-gray-400">Identify smishing attacks and malicious text messages</p>
-                                        </div>
+                                        </Link>
                                     </div>
 
                                     <div className="flex items-start gap-4">
                                         <div className="bg-gradient-to-br from-purple-500 to-pink-500 w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center flex-shrink-0">
                                             <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                                         </div>
-                                        <div>
-                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3">Voice Calls</h3>
+                                        <Link to="/scam-messages#voice-calls" className="flex-1 group hover:opacity-80 transition-opacity">
+                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-pink-400 transition-colors cursor-pointer">Voice Calls</h3>
                                             <p className="text-sm sm:text-base lg:text-lg text-gray-400">Recognize vishing and fake tech support calls</p>
-                                        </div>
+                                        </Link>
                                     </div>
 
                                     <div className="flex items-start gap-4">
                                         <div className="bg-gradient-to-br from-yellow-500 to-orange-500 w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center flex-shrink-0">
                                             <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                                         </div>
-                                        <div>
-                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3">Fake Websites</h3>
+                                        <Link to="/scam-messages#fake-websites" className="flex-1 group hover:opacity-80 transition-opacity">
+                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-400 transition-colors cursor-pointer">Fake Websites</h3>
                                             <p className="text-sm sm:text-base lg:text-lg text-gray-400">Learn to verify URLs and detect spoofed login pages</p>
-                                        </div>
+                                        </Link>
                                     </div>
 
                                     <div className="flex items-start gap-4">
                                         <div className="bg-gradient-to-br from-red-500 to-pink-500 w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center flex-shrink-0">
                                             <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                                         </div>
-                                        <div>
-                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3">Social Media</h3>
+                                        <Link to="/scam-messages#social-media" className="flex-1 group hover:opacity-80 transition-opacity">
+                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-red-400 transition-colors cursor-pointer">Social Media</h3>
                                             <p className="text-sm sm:text-base lg:text-lg text-gray-400">Detect fake profiles, investment scams, and Honey trap</p>
-                                        </div>
+                                        </Link>
                                     </div>
 
                                     <div className="flex items-start gap-4">
                                         <div className="bg-gradient-to-br from-indigo-500 to-purple-500 w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center flex-shrink-0">
                                             <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                                         </div>
-                                        <div>
-                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3">Instant Feedback</h3>
+                                        <Link to="/scam-messages" className="flex-1 group hover:opacity-80 transition-opacity">
+                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-indigo-400 transition-colors cursor-pointer">Instant Feedback</h3>
                                             <p className="text-sm sm:text-base lg:text-lg text-gray-400">Get detailed explanations after each scenario</p>
-                                        </div>
+                                        </Link>
                                     </div>
                                 </div>
 
-                                
+
                             </div>
                         </div>
 

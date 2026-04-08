@@ -1,29 +1,45 @@
-import { useEffect, useState } from "react";
-import { 
-  Upload, Database, Copy, Users, CreditCard, Phone, Mail, 
+import { useEffect, useState, useRef } from "react";
+import {
+  Upload, Database, Copy, Users, CreditCard, Phone, Mail,
   AlertTriangle, Globe, DollarSign, ShieldOff, TrendingDown,
-  ArrowRight, Server, Lock, Eye, Skull, Home,Clock
+  ArrowRight, Server, Lock, Eye, Skull, Home, Clock
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const DataFlow = () => {
   const navigate = useNavigate();
-  const [activeStep, setActiveStep] = useState(-1);
+  const [visibleSteps, setVisibleSteps] = useState(new Set());
   const [showCode, setShowCode] = useState(false);
+  const stepRefs = useRef([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setActiveStep(0), 500);
-    return () => clearTimeout(timer);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = stepRefs.current.indexOf(entry.target);
+            if (index !== -1) {
+              setVisibleSteps((prev) => new Set([...prev, index]));
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -100px 0px",
+      }
+    );
+
+    stepRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      stepRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
   }, []);
-
-  useEffect(() => {
-    if (activeStep >= 0 && activeStep < 6) {
-      const timer = setTimeout(() => {
-        setActiveStep(prev => prev + 1);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [activeStep]);
 
   const steps = [
     {
@@ -153,7 +169,51 @@ const DataFlow = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .scroll-fade {
+          animation: fadeInUp 0.8s ease-out forwards;
+          opacity: 0;
+        }
+
+        .scroll-fade:nth-child(1) {
+          animation-delay: 0s;
+        }
+
+        .scroll-fade:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+
+        .scroll-fade:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+
+        .scroll-fade:nth-child(4) {
+          animation-delay: 0.3s;
+        }
+      `}</style>
+
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -162,8 +222,8 @@ const DataFlow = () => {
 
       <div className="relative z-10 px-4 sm:px-6 py-12 sm:py-16 flex justify-center">
         <div className="max-w-6xl w-full">
-          
-          
+
+
           <div className="text-center mb-12 sm:mb-16">
             <div className="flex justify-center mb-6">
               <div className="relative">
@@ -177,7 +237,7 @@ const DataFlow = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-red-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
               Behind the Scenes: The Dark Journey of Your Data
             </h1>
-            
+
             <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto mb-6">
               This simulated flow reveals exactly what happens to your stolen information from the moment you click "Submit" until it's actively used against you.
             </p>
@@ -188,34 +248,32 @@ const DataFlow = () => {
             </div>
           </div>
 
-          
+
           <div className="relative mb-16">
-            
+
             <div className="absolute left-8 sm:left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-red-600 via-orange-600 to-purple-600"></div>
 
             <div className="space-y-8 sm:space-y-12">
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className={`relative transition-all duration-1000 ${
-                    activeStep >= index ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-                  }`}
+                  ref={(el) => (stepRefs.current[index] = el)}
+                  className={`relative transition-all duration-1000 ${visibleSteps.has(index) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+                    }`}
                 >
-                  
+
                   <div className="absolute left-0 sm:left-4 flex items-center justify-center">
-                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-${step.color}-600 to-${step.color}-800 flex items-center justify-center border-4 border-black shadow-2xl ${
-                      activeStep >= index ? 'animate-pulse' : ''
-                    }`}>
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-${step.color}-600 to-${step.color}-800 flex items-center justify-center border-4 border-black shadow-2xl ${visibleSteps.has(index) ? 'animate-pulse' : ''
+                      }`}>
                       <step.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                     </div>
                   </div>
 
-                  
+
                   <div className="ml-20 sm:ml-32">
-                    <div className={`bg-gradient-to-br from-gray-900 to-${step.color}-900/20 border-2 border-${step.color}-600/50 rounded-2xl p-6 sm:p-8 hover:border-${step.color}-600/80 transition-all ${
-                      step.critical ? 'ring-2 ring-red-500 ring-offset-2 ring-offset-black' : ''
-                    }`}>
-                      
+                    <div className={`bg-gradient-to-br from-gray-900 to-${step.color}-900/20 border-2 border-${step.color}-600/50 rounded-2xl p-6 sm:p-8 hover:border-${step.color}-600/80 transition-all ${step.critical ? 'ring-2 ring-red-500 ring-offset-2 ring-offset-black' : ''
+                      }`}>
+
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
                         <div>
                           <div className="flex items-center gap-3 mb-2">
@@ -234,12 +292,12 @@ const DataFlow = () => {
                         </div>
                       </div>
 
-                      
+
                       <p className="text-gray-300 mb-6 text-sm sm:text-base leading-relaxed">
                         {step.description}
                       </p>
 
-                      
+
                       <div className="bg-black/40 rounded-xl p-4 sm:p-6 mb-4">
                         <h3 className="text-sm font-semibold text-gray-400 mb-3 flex items-center gap-2">
                           <Eye className="w-4 h-4" />
@@ -255,8 +313,8 @@ const DataFlow = () => {
                         </ul>
                       </div>
 
-                      
-                      {step.showJson && activeStep >= index && (
+
+                      {step.showJson && visibleSteps.has(index) && (
                         <div className="mt-4">
                           <div className="flex items-center justify-between mb-3">
                             <h3 className="text-sm font-semibold text-gray-400 flex items-center gap-2">
@@ -278,7 +336,7 @@ const DataFlow = () => {
                         </div>
                       )}
 
-                      
+
                       {step.critical && (
                         <div className="bg-red-600/20 border-2 border-red-500 rounded-xl p-4 flex items-start gap-3">
                           <ShieldOff className="w-6 h-6 text-red-500 flex-shrink-0 animate-pulse" />
@@ -297,35 +355,35 @@ const DataFlow = () => {
             </div>
           </div>
 
-          
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="bg-gradient-to-br from-red-900/40 to-red-800/20 border-2 border-red-600/50 rounded-2xl p-6 text-center">
+            <div className="bg-gradient-to-br from-red-900/40 to-red-800/20 border-2 border-red-600/50 rounded-2xl p-6 text-center scroll-fade">
               <Globe className="w-12 h-12 text-red-400 mx-auto mb-3" />
               <p className="text-3xl font-bold text-red-400 mb-2">20+</p>
               <p className="text-sm text-gray-300">Countries Data Reaches</p>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-900/40 to-orange-800/20 border-2 border-orange-600/50 rounded-2xl p-6 text-center">
+            <div className="bg-gradient-to-br from-orange-900/40 to-orange-800/20 border-2 border-orange-600/50 rounded-2xl p-6 text-center scroll-fade">
               <Users className="w-12 h-12 text-orange-400 mx-auto mb-3" />
               <p className="text-3xl font-bold text-orange-400 mb-2">50+</p>
               <p className="text-sm text-gray-300">Criminal Groups Access</p>
             </div>
 
-            <div className="bg-gradient-to-br from-yellow-900/40 to-yellow-800/20 border-2 border-yellow-600/50 rounded-2xl p-6 text-center">
+            <div className="bg-gradient-to-br from-yellow-900/40 to-yellow-800/20 border-2 border-yellow-600/50 rounded-2xl p-6 text-center scroll-fade">
               <DollarSign className="w-12 h-12 text-yellow-400 mx-auto mb-3" />
               <p className="text-3xl font-bold text-yellow-400 mb-2">$500</p>
               <p className="text-sm text-gray-300">Average Sale Value</p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 border-2 border-purple-600/50 rounded-2xl p-6 text-center">
+            <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 border-2 border-purple-600/50 rounded-2xl p-6 text-center scroll-fade">
               <TrendingDown className="w-12 h-12 text-purple-400 mx-auto mb-3" />
               <p className="text-3xl font-bold text-purple-400 mb-2">0%</p>
               <p className="text-sm text-gray-300">Recovery Rate</p>
             </div>
           </div>
 
-          
-          <div className="bg-gradient-to-br from-gray-900 to-red-900/30 border-2 border-red-600/50 rounded-3xl p-8 sm:p-12 text-center mb-12">
+
+          <div className="bg-gradient-to-br from-gray-900 to-red-900/30 border-2 border-red-600/50 rounded-3xl p-8 sm:p-12 text-center mb-12 scroll-fade">
             <AlertTriangle className="w-16 h-16 text-red-500 mx-auto mb-6 animate-pulse" />
             <h3 className="text-2xl sm:text-3xl font-bold text-red-400 mb-4">
               One Form Submission. Countless Crimes.
@@ -339,8 +397,8 @@ const DataFlow = () => {
             </div>
           </div>
 
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center scroll-fade">
             <button
               onClick={() => navigate("/")}
               className="group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-2"
@@ -358,7 +416,7 @@ const DataFlow = () => {
             </button>
           </div>
 
-          
+
           <div className="mt-12 text-center">
             <p className="text-sm text-gray-500">
               Educational simulation showing real criminal data handling processes

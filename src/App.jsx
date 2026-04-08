@@ -16,8 +16,10 @@ import LandingPage from "./pages/Landing";
 import ScamDetect from "./pages/ScamDetectionTest";
 import ContactPage from "./pages/ContactPage";
 import Roadmap from "./pages/Roadmap";
+import AboutRotary from "./pages/AboutRotary";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import PageNavigation from "./components/PageNavigation";
 
 function App() {
   const location = useLocation();
@@ -52,7 +54,9 @@ function App() {
               <Route path="/scam-detection" element={<ScamDetect />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/roadmap" element={<Roadmap />} />
+              <Route path="/about-rotary" element={<AboutRotary />} />
             </Routes>
+            <PageNavigation />
           </main>
 
           <Footer />
