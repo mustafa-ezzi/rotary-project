@@ -19,7 +19,7 @@ const Landing = () => {
                         <div className="max-w-6xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20 xl:mb-24">
                             <div className="inline-flex items-center gap-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-5 sm:px-6 py-2.5 sm:py-3 mb-6 sm:mb-8">
                                 <Shield className="w-5 h-5 text-purple-300" />
-                                <span className="text-sm sm:text-base text-purple-200 font-medium"> – Digital Safety Awareness Initiative
+                                <span className="text-sm sm:text-base text-purple-200 font-medium">  Digital Safety Awareness Initiative
                                 </span>
                             </div>
 
@@ -31,7 +31,7 @@ const Landing = () => {
                             </h1>
 
                             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 px-4 leading-relaxed">
-                                 is on a mission to educate students, families, and communities about online scams, fraud, and digital risks.
+                                Rotary  is on a mission to educate students, families, and communities about online scams, fraud, and digital risks.
                                 Through real-life examples and safe simulations, we help you recognize red flags before it's too late.
                             </p>
 
