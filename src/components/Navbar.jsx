@@ -154,10 +154,7 @@ const Navbar = () => {
                 />
                 <div className="absolute inset-0 bg-purple-500/20 blur-2xl rounded-full scale-150 opacity-60 group-hover:opacity-90 transition-opacity" />
               </div>
-              <div className="flex flex-col">
-                <span className="nav-brand nav-brand-name">CyberShield</span>
-                <span className="nav-tagline">A Project of RCK Safe City</span>
-              </div>
+              
             </Link>
 
             {/* ── CENTER: Partner logos (large screens only) ── */}
