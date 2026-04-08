@@ -116,7 +116,7 @@ const SplashScreen = ({ onComplete }) => {
 <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-violet-400 mt-2">
                 A Project of Rotaract Club Karachi Safe City
               </div>
-              <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-violet-400 mt-2">
+              <div className="text-xs sm:text-sm font-bold tracking-[0.22em] text-violet-400 mt-2">
               An Initiative Dedicated to Fostering Digital Safety Awarness 
               </div>
             </div>
@@ -132,8 +132,10 @@ const SplashScreen = ({ onComplete }) => {
           </div>
 
           {/* Heading */}
-          <p className="text-[0.65rem] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-slate-500 mb-6 sm:mb-8 md:mb-10">
-            Designed &amp; Presented by Rotary Club of Karachi
+          <p className="text-[0.65rem] sm:text-xs md:text-sm font-bold  tracking-[0.2em] text-slate-500 mb-6 sm:mb-8 md:mb-10">
+            Designed, Developed &amp; Presented By <br/>
+            Rtr. Mustafa Ezzi <span className="left">Rtr. Lamiya Antaria </span> <br/>
+            Club IT Chair <span className="left"> Club President</span>
           </p>
 
           {/* CTA */}

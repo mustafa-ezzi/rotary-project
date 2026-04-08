@@ -78,3 +78,7 @@ body {
   scrollbar-width: thin;
   scrollbar-color: rgba(139, 92, 246, 0.4) transparent;
 }
+
+.left{
+  margin-left: 230px;
+}
