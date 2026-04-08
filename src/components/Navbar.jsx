@@ -27,124 +27,171 @@ const Navbar = () => {
     { name: "Presenter", path: "/presenter" },
     { name: "Roadmap", path: "/roadmap" },
     { name: "Reveal", path: "/reveal" },
-    // { name: "Contact", path: "/contact" },
   ];
 
   const partnerLogos = [
     { src: "/Logos.png", alt: "District 3271" },
-    // { src: "/RCK safe-city.png", alt: "RCK Safe City" },
-    // { src: "/rotaract.png", alt: "Rotaract" },
-    // { src: "/interact.png", alt: "Interact" },
   ];
 
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Exo+2:wght@500;600;700;800&display=swap');
+
         .nav-brand { font-family: 'Rajdhani', sans-serif; }
         .nav-body  { font-family: 'Exo 2', sans-serif; }
 
-        .nav-link-line::after {
+        /* ── Glass panel ── */
+        .nav-glass {
+          background: rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(20px) saturate(180%);
+          -webkit-backdrop-filter: blur(20px) saturate(180%);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+          box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255,255,255,0.12);
+          transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        .nav-glass.scrolled {
+          background: rgba(15, 10, 35, 0.55);
+          box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+
+        /* ── Nav links ── */
+        .nav-link-item {
+          position: relative;
+          font-size: clamp(0.75rem, 0.9vw, 0.95rem);
+          font-weight: 600;
+          letter-spacing: 0.05em;
+          color: rgba(255, 255, 255, 0.82);
+          transition: color 0.2s;
+          padding-bottom: 2px;
+        }
+        .nav-link-item::after {
           content: '';
           position: absolute;
-          bottom: -3px; left: 0;
+          bottom: -4px; left: 0;
           width: 0; height: 2px;
-          background: linear-gradient(90deg, #ec4899, #8b5cf6);
+          background: linear-gradient(90deg, #f472b6, #a78bfa);
           border-radius: 2px;
-          transition: width 0.3s ease;
+          transition: width 0.28s ease;
         }
-        .nav-link-line:hover::after { width: 100%; }
+        .nav-link-item:hover { color: #fff; }
+        .nav-link-item:hover::after { width: 100%; }
 
-        .nav-gradient-btn {
-          background: linear-gradient(130deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
-          transition: all 0.25s;
+        /* ── CTA button ── */
+        .nav-cta {
+          position: relative;
+          overflow: hidden;
+          font-size: clamp(0.68rem, 0.85vw, 0.88rem);
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #fff;
+          padding: clamp(8px, 0.7vw, 12px) clamp(18px, 1.5vw, 28px);
+          border-radius: 100px;
+          background: linear-gradient(130deg, #e879a4 0%, #8b5cf6 55%, #3b82f6 100%);
+          box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset, 0 4px 20px rgba(139,92,246,0.35);
+          transition: transform 0.22s, box-shadow 0.22s;
         }
-        .nav-gradient-btn:hover {
-          transform: scale(1.05);
-          box-shadow: 0 0 24px rgba(139,92,246,0.55);
+        .nav-cta::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(255,255,255,0.12);
+          opacity: 0;
+          transition: opacity 0.2s;
         }
-        .nav-gradient-btn:active { transform: scale(0.97); }
+        .nav-cta:hover { transform: translateY(-1px) scale(1.03); box-shadow: 0 0 0 1px rgba(255,255,255,0.2) inset, 0 8px 28px rgba(139,92,246,0.5); }
+        .nav-cta:hover::before { opacity: 1; }
+        .nav-cta:active { transform: scale(0.97); }
 
+        /* ── Logo glow ── */
         @keyframes navglow {
-          0%,100% { filter: drop-shadow(0 0 6px rgba(236,72,153,0.5)); }
-          50%      { filter: drop-shadow(0 0 14px rgba(236,72,153,0.85)) drop-shadow(0 0 24px rgba(99,102,241,0.5)); }
+          0%,100% { filter: drop-shadow(0 0 5px rgba(244,114,182,0.45)); }
+          50%      { filter: drop-shadow(0 0 12px rgba(244,114,182,0.8)) drop-shadow(0 0 22px rgba(139,92,246,0.45)); }
         }
-        .nav-logo-glow { animation: navglow 3s ease-in-out infinite; }
+        .nav-logo-glow { animation: navglow 3.5s ease-in-out infinite; }
 
+        /* ── Divider ── */
+        .nav-divider {
+          width: 1px;
+          align-self: stretch;
+          background: rgba(255,255,255,0.12);
+          margin: 12px 0;
+        }
+
+        /* ── Height ── */
+        .nav-height { height: clamp(60px, 6vw, 88px); }
+
+        /* ── Mobile drawer ── */
         .mobile-drawer {
           transform: translateX(100%);
-          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+          background: rgba(12, 8, 30, 0.92);
+          backdrop-filter: blur(24px) saturate(160%);
+          -webkit-backdrop-filter: blur(24px) saturate(160%);
+          border-left: 1px solid rgba(255,255,255,0.10);
         }
         .mobile-drawer.open { transform: translateX(0); }
 
         .mobile-overlay {
           opacity: 0;
           pointer-events: none;
-          transition: opacity 0.4s ease;
+          transition: opacity 0.38s ease;
         }
-        .mobile-overlay.open {
-          opacity: 1;
-          pointer-events: auto;
-        }
+        .mobile-overlay.open { opacity: 1; pointer-events: auto; }
 
-        /* Scrollbar hide */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Clamp font sizes for big screens */
-        .nav-brand-name {
-          font-size: clamp(1rem, 1.5vw, 1.5rem);
-          font-weight: 700;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          background: linear-gradient(130deg, #f472b6, #a78bfa, #60a5fa);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          line-height: 1;
+        /* ── Mobile link rows ── */
+        .m-link-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 14px 12px;
+          border-radius: 12px;
+          border: 1px solid transparent;
+          transition: background 0.18s, border-color 0.18s;
+          text-decoration: none;
         }
-        .nav-tagline {
-          font-size: clamp(0.5rem, 0.7vw, 0.72rem);
-          text-transform: uppercase;
-          letter-spacing: 0.2em;
-          font-weight: 700;
-          color: #a78bfa;
-          margin-top: 3px;
+        .m-link-row:hover {
+          background: rgba(255,255,255,0.05);
+          border-color: rgba(255,255,255,0.08);
         }
-        .nav-link-text {
-          font-size: clamp(0.72rem, 0.9vw, 0.95rem);
-          font-weight: 600;
-          letter-spacing: 0.05em;
+
+        /* ── Partner image sizes ── */
+        .nav-partner-img { height: clamp(28px, 4vw, 60px); }
+        .nav-logo-img    { height: clamp(36px, 5vw, 68px); width: auto; }
+
+        /* Top shimmer line */
+        .nav-shimmer {
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent 0%, rgba(167,139,250,0.5) 40%, rgba(244,114,182,0.5) 60%, transparent 100%);
         }
-        .nav-partner-img {
-          height: clamp(28px, 9vw, 74px);
+
+        /* Hamburger button */
+        .ham-btn {
+          display: flex; align-items: center; justify-content: center;
+          width: 40px; height: 40px;
+          border-radius: 10px;
+          background: rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.14);
+          color: #fff;
+          transition: background 0.18s;
+          cursor: pointer;
         }
-        .nav-logo-img {
-          height: clamp(36px, 6vw, 70px);
-          width: auto;
-        }
-        .nav-height {
-          height: clamp(64px, 6vw, 96px);
-        }
-        .nav-get-started {
-          font-size: clamp(0.68rem, 0.85vw, 0.9rem);
-          padding: clamp(8px, 0.7vw, 14px) clamp(16px, 1.5vw, 28px);
-        }
+        .ham-btn:hover { background: rgba(255,255,255,0.14); }
       `}</style>
 
-      <nav className={`nav-body w-full sticky top-0 z-50 border-b transition-all duration-300 ${
-        scrolled
-          ? "bg-[#070b18]/95 border-white/10 shadow-[0_4px_40px_rgba(0,0,0,0.6)]"
-          : "bg-[#070b18]/80 border-white/[0.06]"
-      } backdrop-blur-xl`}>
+      <nav className={`nav-body nav-glass w-full sticky top-0 z-50 ${scrolled ? "scrolled" : ""}`}>
+        <div className="nav-shimmer" />
 
-        {/* Subtle top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
-
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 2xl:px-12 3xl:px-16">
+        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 2xl:px-12">
           <div className="nav-height flex items-center justify-between gap-4">
 
-            {/* ── LEFT: Logo + Brand ── */}
+            {/* ── LEFT: Logo ── */}
             <Link to="/" className="flex items-center gap-3 shrink-0 group">
               <div className="relative">
                 <img
@@ -152,79 +199,70 @@ const Navbar = () => {
                   alt="CyberShield"
                   className="nav-logo-img object-contain relative z-10 nav-logo-glow"
                 />
-                <div className="absolute inset-0 bg-purple-500/20 blur-2xl rounded-full scale-150 opacity-60 group-hover:opacity-90 transition-opacity" />
+                <div className="absolute inset-0 bg-purple-500/15 blur-2xl rounded-full scale-150 opacity-50 group-hover:opacity-80 transition-opacity" />
               </div>
-              
             </Link>
 
-            {/* ── CENTER: Partner logos (large screens only) ── */}
-            <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8 px-4 xl:px-6 border-x border-white/[0.08] flex-shrink-0">
+            {/* ── CENTER: Partner logos (lg+) ── */}
+            <div className="hidden lg:flex items-center gap-5 xl:gap-7 px-6 xl:px-8 flex-shrink-0">
+              <div className="nav-divider" />
               {partnerLogos.map((logo) => (
                 <img
                   key={logo.alt}
                   src={logo.src}
                   alt={logo.alt}
-                  className="nav-partner-img w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-200 hover:scale-110"
+                  className="nav-partner-img w-auto object-contain opacity-75 hover:opacity-100 transition-all duration-200 hover:scale-105"
                 />
               ))}
+              <div className="nav-divider" />
             </div>
 
-            {/* ── RIGHT: Nav links + CTA ── */}
-            <div className="hidden xl:flex items-center gap-6 2xl:gap-8 flex-shrink-0">
-              <ul className="flex items-center gap-5 2xl:gap-7">
+            {/* ── RIGHT: Links + CTA (xl+) ── */}
+            <div className="hidden xl:flex items-center gap-7 2xl:gap-9 flex-shrink-0">
+              <ul className="flex items-center gap-6 2xl:gap-8 list-none m-0 p-0">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <Link
-                      to={link.path}
-                      className="nav-link-text nav-link-line relative text-slate-300 hover:text-white transition-colors duration-200"
-                    >
+                    <Link to={link.path} className="nav-link-item">
                       {link.name}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/bank-verification"
-                className="nav-gradient-btn nav-get-started rounded-full font-bold uppercase tracking-wider text-white whitespace-nowrap shadow-[0_0_16px_rgba(139,92,246,0.3)]"
-              >
+              <Link to="/bank-verification" className="nav-cta whitespace-nowrap">
                 Get Started
               </Link>
             </div>
 
-            {/* ── Partner logos on md screens (between sm and xl) ── */}
+            {/* ── Partner logos on md screens ── */}
             <div className="hidden md:flex lg:hidden items-center gap-3 flex-shrink-0">
               {partnerLogos.map((logo) => (
-                <img
-                  key={logo.alt}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-7 w-auto object-contain opacity-70"
-                />
+                <img key={logo.alt} src={logo.src} alt={logo.alt} className="h-7 w-auto object-contain opacity-65" />
               ))}
             </div>
 
-            {/* ── Mobile hamburger ── */}
+            {/* ── Hamburger ── */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
-              className="xl:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors flex-shrink-0"
+              className="ham-btn xl:hidden flex-shrink-0"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* ══════════════════════════════════
-          MOBILE DRAWER
-      ══════════════════════════════════ */}
-      <div className={`mobile-overlay fixed inset-0 z-[90] bg-slate-950/85 backdrop-blur-md xl:hidden ${isOpen ? "open" : ""}`}
-        onClick={() => setIsOpen(false)} />
+      {/* ══ MOBILE OVERLAY ══ */}
+      <div
+        className={`mobile-overlay fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm xl:hidden ${isOpen ? "open" : ""}`}
+        onClick={() => setIsOpen(false)}
+      />
 
-      <div className={`mobile-drawer fixed top-0 right-0 z-[100] h-screen w-[82vw] max-w-[360px] bg-[#0d1120] border-l border-white/[0.08] shadow-[−8px_0_60px_rgba(0,0,0,0.6)] flex flex-col xl:hidden ${isOpen ? "open" : ""}`}>
+      {/* ══ MOBILE DRAWER ══ */}
+      <div className={`mobile-drawer fixed top-0 right-0 z-[100] h-screen w-[80vw] max-w-[340px] flex flex-col xl:hidden shadow-2xl ${isOpen ? "open" : ""}`}>
 
         {/* Drawer header */}
-        <div className="flex items-center justify-between px-5 h-16 border-b border-white/[0.07] shrink-0">
+        <div className="flex items-center justify-between px-5 h-16 border-b border-white/[0.08] shrink-0">
           <Link to="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
             <img src="/cybershield.png" alt="CyberShield" className="h-8 w-auto object-contain" />
             <div>
@@ -232,35 +270,31 @@ const Navbar = () => {
               <div className="text-[8px] uppercase tracking-[0.18em] text-violet-400 font-bold mt-0.5">RCK Safe City</div>
             </div>
           </Link>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
-          >
-            <X className="w-4 h-4" />
+          <button onClick={() => setIsOpen(false)} className="ham-btn">
+            <X size={16} />
           </button>
         </div>
 
-        {/* Drawer scrollable body */}
+        {/* Drawer body */}
         <div className="flex-1 overflow-y-auto no-scrollbar overscroll-contain p-5">
 
-          {/* Nav links */}
-          <nav className="space-y-0.5 mb-6">
+          <nav className="space-y-1 mb-6">
             {links.map((link, i) => (
               <Link
                 key={link.name}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="group flex items-center justify-between py-3.5 px-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/[0.06] transition-all duration-200"
+                className="m-link-row"
               >
                 <div className="flex items-center gap-3.5">
-                  <span className="text-[9px] font-black text-violet-500/50 tracking-widest w-5">
+                  <span className="text-[9px] font-black text-violet-400/50 tracking-widest w-5 font-mono">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-[0.95rem] font-bold text-slate-200 group-hover:text-white transition-colors">
+                  <span className="text-[0.95rem] font-bold text-white/85">
                     {link.name}
                   </span>
                 </div>
-                <span className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-violet-400 transition-colors" />
+                <span className="w-1.5 h-1.5 rounded-full bg-white/15 group-hover:bg-violet-400 transition-colors" />
               </Link>
             ))}
           </nav>
@@ -269,14 +303,15 @@ const Navbar = () => {
           <Link
             to="/bank-verification"
             onClick={() => setIsOpen(false)}
-            className="nav-gradient-btn block w-full text-center py-3.5 rounded-xl text-[0.8rem] font-extrabold uppercase tracking-[0.15em] text-white shadow-[0_4px_20px_rgba(139,92,246,0.4)] mb-8"
+            className="nav-cta block w-full text-center py-3.5 rounded-xl text-[0.8rem] tracking-[0.15em] mb-8"
+            style={{ borderRadius: "14px" }}
           >
             Get Started Now
           </Link>
 
-          {/* Partners */}
-          <div className="rounded-2xl bg-white/[0.02] border border-white/[0.06] p-5">
-            <p className="text-[8px] uppercase tracking-[0.3em] text-slate-500 font-bold mb-4 text-center">
+          {/* Partners panel */}
+          <div className="rounded-2xl p-5" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <p className="text-[8px] uppercase tracking-[0.3em] text-white/30 font-bold mb-4 text-center">
               Supported By
             </p>
             <div className="grid grid-cols-2 gap-5 items-center justify-items-center">
@@ -285,7 +320,7 @@ const Navbar = () => {
                   key={logo.alt}
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-8 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity"
+                  className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                 />
               ))}
             </div>
@@ -294,7 +329,7 @@ const Navbar = () => {
 
         {/* Drawer footer */}
         <div className="px-5 py-4 border-t border-white/[0.06] shrink-0">
-          <p className="text-[8px] uppercase tracking-[0.2em] text-slate-600 text-center font-bold">
+          <p className="text-[8px] uppercase tracking-[0.2em] text-white/25 text-center font-bold">
             CyberShield · RCK Safe City · Karachi
           </p>
         </div>

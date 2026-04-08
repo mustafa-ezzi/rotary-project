@@ -204,7 +204,7 @@ const Landing = () => {
                                         </ul>
                                         <div className="flex flex-col sm:flex-row gap-4">
                                             <Link
-                                                to="/teams"
+                                                to=""
                                                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 px-7 rounded-lg text-base sm:text-lg"
                                             >
                                                 View Awareness Programs
