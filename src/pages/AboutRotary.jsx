@@ -165,7 +165,7 @@ const AboutRotary = () => {
               </div>
 
               <div className="rounded-2xl border border-sky-400/15 bg-slate-950/50 p-5">
-                <p className="text-xs uppercase tracking-[0.28em] text-amber-200/80">Rotary Club</p>
+                <p className="text-xs uppercase tracking-[0.28em] text-amber-200/80">Rotary Club of Karachi Safe City</p>
                 <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
                   Rotary Club of Karachi Safe City (RCK Safe City) belonging to District 3271 is
                   registered with Rotary International and has fifty plus members in the form of
