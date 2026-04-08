@@ -27,6 +27,10 @@ const Navbar = () => {
     { name: "Presenter", path: "/presenter" },
     { name: "Roadmap", path: "/roadmap" },
     { name: "Reveal", path: "/reveal" },
+    { name: "Contact us", path: "/reveal" },
+    { name: "About us", path: "/reveal" },
+
+
   ];
 
   const partnerLogos = [
@@ -136,7 +140,7 @@ const Navbar = () => {
           opacity: 0.92;
           transition: opacity 0.2s, transform 0.2s;
           filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
-        }
+        }re
         .nav-partner-img:hover { opacity: 1; transform: scale(1.06); }
 
         /* ── CyberShield logo ── */
