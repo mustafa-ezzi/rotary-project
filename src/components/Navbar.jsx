@@ -29,7 +29,7 @@ const Navbar = () => {
   const links = [
     { name: "Home", path: "/" },
     { name: "Training", path: "/bank-verification" },
-    { name: "Presenter", path: "/presenter" },
+    // { name: "Presenter", path: "/presenter" },
     { name: "Roadmap", path: "/roadmap" },
     { name: "Reveal", path: "/reveal" },
     { name: "Cybercrime Cell", path: "/contact" },
