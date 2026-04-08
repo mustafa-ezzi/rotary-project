@@ -19,19 +19,19 @@ const Landing = () => {
                         <div className="max-w-6xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20 xl:mb-24">
                             <div className="inline-flex items-center gap-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-5 sm:px-6 py-2.5 sm:py-3 mb-6 sm:mb-8">
                                 <Shield className="w-5 h-5 text-purple-300" />
-                                <span className="text-sm sm:text-base text-purple-200 font-medium">Rotary Pakistan – Digital Safety Awareness Initiative
+                                <span className="text-sm sm:text-base text-purple-200 font-medium"> – Digital Safety Awareness Initiative
                                 </span>
                             </div>
 
                             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-tight mb-5 sm:mb-6 px-2">
-                                Learn to Stay Safe
+                                 Stay Safe
                                 <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mt-2">
                                     From Online Scams
                                 </span>
                             </h1>
 
                             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 px-4 leading-relaxed">
-                                Rotary Pakistan is on a mission to educate students, families, and communities about online scams, fraud, and digital risks.
+                                 is on a mission to educate students, families, and communities about online scams, fraud, and digital risks.
                                 Through real-life examples and safe simulations, we help you recognize red flags before it's too late.
                             </p>
 
@@ -186,7 +186,7 @@ const Landing = () => {
                                             Educating Students, Families & Communities
                                         </h2>
                                         <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-                                            Rotary Pakistan works with schools, universities, youth groups, and local communities to promote digital safety awareness and reduce the impact of online scams.
+                                            Rotary  works with schools, universities, youth groups, and local communities to promote digital safety awareness and reduce the impact of online scams.
                                         </p>
                                         <ul className="space-y-4 sm:space-y-5 mb-6 sm:mb-8">
                                             <li className="flex items-center gap-3 text-base sm:text-lg text-gray-300">
