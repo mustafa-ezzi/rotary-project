@@ -113,9 +113,11 @@ const SplashScreen = ({ onComplete }) => {
               style={{ maxWidth: "none" }}
             />
             <div>
-
-              <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-violet-400 mt-2">
+<div className="text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-violet-400 mt-2">
                 A Project of Rotaract Club Karachi Safe City
+              </div>
+              <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-violet-400 mt-2">
+              An Initiative Dedicated to Fostering Digital Safety Awarness 
               </div>
             </div>
           </div>
