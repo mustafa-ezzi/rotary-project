@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MessageSquare, Mail, Phone, AlertTriangle, Shield, Eye, XCircle, CheckCircle, Smartphone, Package, CreditCard, Clock, TrendingUp, Award, Home, ArrowRight, Info } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ScamMessages = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [selectedMessage, setSelectedMessage] = useState(null);
   const [filterType, setFilterType] = useState('all');
 
@@ -275,6 +276,78 @@ const ScamMessages = () => {
     }
   };
 
+  const categorySections = [
+    {
+      id: "email-phishing",
+      title: "Email Phishing",
+      description: "Examples of fake emails from banks, delivery services, and government-style senders.",
+      filter: "email",
+      count: messages.filter((msg) => msg.type === "Email").length,
+      defaultMessageId: 6,
+    },
+    {
+      id: "sms-scams",
+      title: "SMS Scams",
+      description: "Text-message scams that use urgency, fake links, and spoofed sender names.",
+      filter: "sms",
+      count: messages.filter((msg) => msg.type === "SMS").length,
+      defaultMessageId: 1,
+    },
+    {
+      id: "voice-calls",
+      title: "Voice Calls",
+      description: "Vishing examples where scammers impersonate trusted institutions over the phone.",
+      filter: "call",
+      count: messages.filter((msg) => msg.type === "Call").length,
+      defaultMessageId: 7,
+    },
+    {
+      id: "fake-websites",
+      title: "Fake Websites",
+      description: "Scam messages often push you to spoofed portals and fake verification pages.",
+      filter: "all",
+      count: messages.filter((msg) => msg.text.includes("http") || msg.text.includes(".com") || msg.text.includes(".pk")).length,
+      defaultMessageId: 1,
+    },
+    {
+      id: "social-media",
+      title: "Social Media",
+      description: "Fraud attempts spread through WhatsApp groups, fake profiles, and direct messages.",
+      filter: "whatsapp",
+      count: messages.filter((msg) => msg.type === "WhatsApp").length,
+      defaultMessageId: 9,
+    },
+    {
+      id: "instant-feedback",
+      title: "Instant Feedback",
+      description: "Open any scam card below to get detailed red flags, tactics, and a reality check.",
+      filter: "all",
+      count: messages.length,
+      defaultMessageId: 1,
+    },
+  ];
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const targetId = location.hash.replace("#", "");
+    const matchedSection = categorySections.find((section) => section.id === targetId);
+
+    if (matchedSection) {
+      setFilterType(matchedSection.filter);
+      setSelectedMessage(
+        messages.find((message) => message.id === matchedSection.defaultMessageId) ?? null
+      );
+    }
+
+    const timer = window.setTimeout(() => {
+      const targetElement = document.getElementById(targetId);
+      targetElement?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+
+    return () => window.clearTimeout(timer);
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
@@ -296,6 +369,33 @@ const ScamMessages = () => {
           <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             These are actual scam message templates used by criminals. Learn to recognize them before you become a victim.
           </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 mb-12">
+          {categorySections.map((section) => (
+            <button
+              key={section.id}
+              id={section.id}
+              type="button"
+              onClick={() => {
+                setFilterType(section.filter);
+                setSelectedMessage(
+                  messages.find((message) => message.id === section.defaultMessageId) ?? null
+                );
+                window.history.replaceState(null, "", `#${section.id}`);
+                document.getElementById("messages-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="rounded-2xl border border-white/10 bg-white/5 p-5 text-left transition hover:border-white/20 hover:bg-white/10"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <h2 className="text-lg font-bold text-white">{section.title}</h2>
+                <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-gray-300">
+                  {section.count} examples
+                </span>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-gray-400">{section.description}</p>
+            </button>
+          ))}
         </div>
 
         {/* Filter Buttons */}
@@ -352,7 +452,7 @@ const ScamMessages = () => {
         </div>
 
         {/* Messages Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div id="messages-grid" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {filteredMessages.map((msg) => (
             <div
               key={msg.id}

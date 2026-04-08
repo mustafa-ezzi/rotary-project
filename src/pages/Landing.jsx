@@ -233,7 +233,7 @@ const Landing = () => {
                                         <div className="bg-gradient-to-br from-indigo-500 to-purple-500 w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center flex-shrink-0">
                                             <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                                         </div>
-                                        <Link to="/scam-messages" className="flex-1 group hover:opacity-80 transition-opacity">
+                                        <Link to="/scam-messages#instant-feedback" className="flex-1 group hover:opacity-80 transition-opacity">
                                             <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-indigo-400 transition-colors cursor-pointer">Instant Feedback</h3>
                                             <p className="text-sm sm:text-base lg:text-lg text-gray-400">Get detailed explanations after each scenario</p>
                                         </Link>
