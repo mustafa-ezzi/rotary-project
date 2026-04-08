@@ -211,10 +211,10 @@ const Landing = () => {
                                                 <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
                                             </Link>
                                             <Link
-                                                to="/contact"
+                                                to=""
                                                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-4 px-7 rounded-lg border border-white/20 text-base sm:text-lg"
                                             >
-                                                Contact Rotary
+                                                Contact US
                                             </Link>
                                         </div>
                                     </div>
