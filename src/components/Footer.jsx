@@ -4,10 +4,8 @@ import { Mail, Heart, ExternalLink, ShieldCheck, Award } from "lucide-react";
 
 const Footer = () => {
   const partnerLogos = [
-    { src: "/district-3271.png", alt: "District 3271" },
-    { src: "/RCK safe-city.png", alt: "RCK Safe City" },
-    { src: "/rotaract.png", alt: "Rotaract" },
-    { src: "/interact.png", alt: "Interact" },
+    { src: "/Logos.png", alt: "District 3271" },
+ 
   ];
 
   return (
@@ -47,7 +45,7 @@ const Footer = () => {
                   key={index} 
                   src={logo.src} 
                   alt={logo.alt} 
-                  className="h-10 md:h-12 w-auto object-contain hover:scale-110 transition-transform duration-300"
+                  className="h-10 md:h-14 w-auto object-contain hover:scale-110 transition-transform duration-300"
                 />
               ))}
             </div>

@@ -2,10 +2,8 @@
 
 const SplashScreen = ({ onComplete }) => {
   const partnerLogos = [
-    { src: "/district-3271.png", alt: "District 3271" },
-    { src: "/RCK safe-city.png", alt: "RCK Safe City" },
-    { src: "/rotaract.png", alt: "Rotaract" },
-    { src: "/interact.png", alt: "Interact" },
+    { src: "/Logos.png", alt: "District 3271" },
+   
   ];
 
   return (
@@ -93,7 +91,7 @@ const SplashScreen = ({ onComplete }) => {
                   key={logo.alt}
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-10 w-auto object-contain sm:h-13 md:h-14 opacity-90 hover:opacity-100 transition-opacity duration-200"
+                  className="h-10 w-auto object-contain sm:h-13 md:h-20 opacity-90 hover:opacity-100 transition-opacity duration-200"
                 />
               ))}
             </div>

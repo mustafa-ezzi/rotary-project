@@ -31,10 +31,10 @@ const Navbar = () => {
   ];
 
   const partnerLogos = [
-    { src: "/district-3271.png", alt: "District 3271" },
-    { src: "/RCK safe-city.png", alt: "RCK Safe City" },
-    { src: "/rotaract.png", alt: "Rotaract" },
-    { src: "/interact.png", alt: "Interact" },
+    { src: "/Logos.png", alt: "District 3271" },
+    // { src: "/RCK safe-city.png", alt: "RCK Safe City" },
+    // { src: "/rotaract.png", alt: "Rotaract" },
+    // { src: "/interact.png", alt: "Interact" },
   ];
 
   return (
@@ -117,10 +117,10 @@ const Navbar = () => {
           letter-spacing: 0.05em;
         }
         .nav-partner-img {
-          height: clamp(28px, 3vw, 48px);
+          height: clamp(28px, 9vw, 74px);
         }
         .nav-logo-img {
-          height: clamp(36px, 4vw, 56px);
+          height: clamp(36px, 6vw, 70px);
           width: auto;
         }
         .nav-height {
