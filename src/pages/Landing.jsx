@@ -158,69 +158,12 @@ const Landing = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col sm:flex-row gap-4">
-                                    <Link
-                                        to="/bank-verification"
-                                        className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 text-base sm:text-lg"
-                                    >
-                                        <Eye className="w-5 h-5 sm:w-6 sm:h-6" />
-                                        Learn From This Example
-                                    </Link>
-                                    <button className="flex-1 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-4 px-6 rounded-lg border border-white/20 transition-all duration-300 text-base sm:text-lg">
-                                        Show Me The Warning Signs
-                                    </button>
-                                </div>
+                               
                             </div>
                         </div>
 
 
-                        <div className="max-w-6xl mx-auto mb-12 sm:mb-16 lg:mb-20 xl:mb-24 px-4">
-                            <div className="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 backdrop-blur-xl rounded-3xl p-5 sm:p-8 lg:p-10 xl:p-12 border border-indigo-500/20">
-                                <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-                                    <div>
-                                        <div className="inline-flex items-center gap-2 bg-indigo-500/20 rounded-full px-5 py-2.5 mb-5 sm:mb-6">
-                                            <Users className="w-5 h-5 text-indigo-300" />
-                                            <span className="text-base text-indigo-200 font-medium">Community Awareness Program</span>
-                                        </div>
-                                        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-5 sm:mb-6 leading-tight">
-                                            Educating Students, Families & Communities
-                                        </h2>
-                                        <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-                                            Rotary  works with schools, universities, youth groups, and local communities to promote digital safety awareness and reduce the impact of online scams.
-                                        </p>
-                                        <ul className="space-y-4 sm:space-y-5 mb-6 sm:mb-8">
-                                            <li className="flex items-center gap-3 text-base sm:text-lg text-gray-300">
-                                                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                                                Custom scenarios tailored to your industry
-                                            </li>
-                                            <li className="flex items-center gap-3 text-base sm:text-lg text-gray-300">
-                                                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                                                Anonymous progress tracking and analytics
-                                            </li>
-                                            <li className="flex items-center gap-3 text-base sm:text-lg text-gray-300">
-                                                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                                                Compliance reporting and certifications
-                                            </li>
-                                        </ul>
-                                        <div className="flex flex-col sm:flex-row gap-4">
-                                            <Link
-                                                to="/bank-verification"
-                                                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 px-7 rounded-lg text-base sm:text-lg"
-                                            >
-                                                View Awareness Programs
-                                                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                                            </Link>
-                                            <Link
-                                                to=""
-                                                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-4 px-7 rounded-lg border border-white/20 text-base sm:text-lg"
-                                            >
-                                                Contact US
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
 
 
                         <div className="max-w-7xl mx-auto mb-12 sm:mb-16 lg:mb-20 xl:mb-24 px-4">
@@ -297,15 +240,7 @@ const Landing = () => {
                                     </div>
                                 </div>
 
-                                <div className="text-center">
-                                    <Link
-                                        to="/bank-verification"
-                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-5 px-9 rounded-full text-lg sm:text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl"
-                                    >
-                                        Start Learning & Stay Safe Online
-                                        <ArrowRight className="w-6 h-6" />
-                                    </Link>
-                                </div>
+                                
                             </div>
                         </div>
 

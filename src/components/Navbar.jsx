@@ -28,7 +28,7 @@ const Navbar = () => {
     { name: "Roadmap", path: "/roadmap" },
     { name: "Reveal", path: "/reveal" },
     { name: "Contact us", path: "/reveal" },
-    { name: "About us", path: "/reveal" },
+    { name: "About Rotary", path: "/reveal" },
 
 
   ];
