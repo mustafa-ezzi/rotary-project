@@ -225,7 +225,7 @@ const Landing = () => {
                                         </div>
                                         <div>
                                             <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3">Social Media</h3>
-                                            <p className="text-sm sm:text-base lg:text-lg text-gray-400">Detect fake profiles, investment scams, and romance fraud</p>
+                                            <p className="text-sm sm:text-base lg:text-lg text-gray-400">Detect fake profiles, investment scams, and Honey trap</p>
                                         </div>
                                     </div>
 
