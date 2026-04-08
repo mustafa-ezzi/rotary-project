@@ -3,7 +3,7 @@
 const SplashScreen = ({ onComplete }) => {
   const partnerLogos = [
     { src: "/Logos.png", alt: "District 3271" },
-   
+
   ];
 
   return (
@@ -80,71 +80,68 @@ const SplashScreen = ({ onComplete }) => {
         <div className="absolute bottom-[-80px] left-1/2 -translate-x-1/2 w-[500px] h-[250px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(96,165,250,0.08) 0%, transparent 70%)" }} />
 
-        {/* Gradient border card */}
-        <div className="cs-card-border w-full max-w-3xl shadow-[0_0_80px_rgba(139,92,246,0.12),0_32px_100px_rgba(0,0,0,0.7)]">
-          <div className="cs-card-inner relative z-10 w-full p-7 text-center sm:p-10 md:p-12">
+        {/* Main content - centered */}
+        <div className="relative z-10 w-full max-w-4xl h-screen flex flex-col items-center justify-center text-center px-4">
 
-            {/* Partner logos */}
-            <div className="mb-6 flex flex-wrap items-center justify-center gap-5 sm:gap-7">
-              {partnerLogos.map((logo) => (
-                <img
-                  key={logo.alt}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-10 w-auto object-contain sm:h-13 md:h-20 opacity-90 hover:opacity-100 transition-opacity duration-200"
-                />
-              ))}
-            </div>
-
-            {/* Gradient divider */}
-            <div className="cs-divider h-px w-full mb-8" />
-
-            {/* Lock image + CyberShield wordmark side by side */}
-            <div className="flex items-center justify-center gap-5 mb-3">
+          {/* Partner logos - larger and centered */}
+          <div className="mb-12 flex items-center justify-center">
+            {partnerLogos.map((logo) => (
               <img
-                src="/cybershield.png"
-                alt="CyberShield lock"
-                className="cs-logo-anim h-20 w-auto object-contain sm:h-24 md:h-28"
-                style={{ maxWidth: "90px" }}
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-32 w-auto object-contain sm:h-40 md:h-48 opacity-90 hover:opacity-100 transition-opacity duration-200"
               />
-              <div className="text-left">
-                <div className="cs-brand-text text-[2.5rem] sm:text-[2.9rem] md:text-[3.6rem]">
-                  CyberShield
-                </div>
-                <div className="text-[0.65rem] sm:text-[0.72rem] font-bold uppercase tracking-[0.22em] text-violet-400 mt-0.5">
-                  A Project of Rotaract Club Karachi Safe City
-                </div>
+            ))}
+          </div>
+
+          {/* Gradient divider */}
+          <div className="cs-divider h-px w-32 mb-12" />
+
+          {/* Lock image + CyberShield wordmark */}
+          <div className="flex flex-col items-center justify-center gap-6 mb-8">
+            <img
+              src="/cybershield.png"
+              alt="CyberShield lock"
+              className="cs-logo-anim h-40 w-auto object-contain sm:h-56 md:h-72"
+              style={{ maxWidth: "none" }}
+            />
+            <div>
+              <div className="cs-brand-text text-4xl sm:text-5xl md:text-7xl">
+                CyberShield
+              </div>
+              <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-violet-400 mt-2">
+                A Project of Rotaract Club Karachi Safe City
               </div>
             </div>
-
-            {/* Separator */}
-            <div className="flex items-center justify-center gap-2 my-5">
-              <div className="h-px flex-1 max-w-[100px] bg-white/10" />
-              <div className="w-2 h-2 rounded-full bg-pink-400 shadow-[0_0_10px_#f472b6]" />
-              <div className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-              <div className="w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_10px_#60a5fa]" />
-              <div className="h-px flex-1 max-w-[100px] bg-white/10" />
-            </div>
-
-            {/* Heading */}
-           
-            <p className="text-[0.68rem] sm:text-[0.72rem] font-bold uppercase tracking-[0.2em] text-slate-500 mb-8">
-              Designed &amp; Presented by Rotary Club of Karachi
-            </p>
-
-            {/* CTA */}
-            <button
-              type="button"
-              onClick={onComplete}
-              className="cs-btn-gradient inline-flex items-center justify-center gap-2.5 rounded-full px-9 py-3 text-[0.76rem] sm:text-[0.8rem] font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_4px_28px_rgba(139,92,246,0.5)] focus:outline-none focus-visible:ring-4 focus-visible:ring-violet-400/50"
-            >
-              Continue
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full border border-white/50 text-[12px] leading-none">
-                ›
-              </span>
-            </button>
-
           </div>
+
+          {/* Separator */}
+          <div className="flex items-center justify-center gap-2 my-8">
+            <div className="h-px flex-1 max-w-[100px] bg-white/10" />
+            <div className="w-2 h-2 rounded-full bg-pink-400 shadow-[0_0_10px_#f472b6]" />
+            <div className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+            <div className="w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_10px_#60a5fa]" />
+            <div className="h-px flex-1 max-w-[100px] bg-white/10" />
+          </div>
+
+          {/* Heading */}
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-slate-500 mb-10">
+            Designed &amp; Presented by Rotary Club of Karachi
+          </p>
+
+          {/* CTA */}
+          <button
+            type="button"
+            onClick={onComplete}
+            className="cs-btn-gradient inline-flex items-center justify-center gap-2.5 rounded-full px-12 py-4 text-sm sm:text-base font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_4px_28px_rgba(139,92,246,0.5)] focus:outline-none focus-visible:ring-4 focus-visible:ring-violet-400/50"
+          >
+            Continue
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full border border-white/50 text-[12px] leading-none">
+              ›
+            </span>
+          </button>
+
         </div>
       </div>
     </>
