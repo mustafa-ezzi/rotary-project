@@ -84,9 +84,7 @@ const SplashScreen = ({ onComplete }) => {
         <div className="relative z-10 w-full max-w-4xl h-screen flex flex-col items-center justify-center text-center px-4">
 
           {/* Welcome heading */}
-          <h1 className="cs-brand-text text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-            Welcome to CyberShield
-          </h1>
+          
 
           {/* Partner logos - larger and centered */}
           <div className="mb-12 flex items-center justify-center">
@@ -105,6 +103,9 @@ const SplashScreen = ({ onComplete }) => {
 
           {/* Lock image + CyberShield wordmark */}
           <div className="flex flex-col items-center justify-center gap-6 mb-8">
+            <h1 className="cs-brand-text text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Welcome to 
+          </h1>
             <img
               src="/cybershield.png"
               alt="CyberShield lock"
