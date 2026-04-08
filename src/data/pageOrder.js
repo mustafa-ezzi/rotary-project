@@ -8,9 +8,9 @@ export const pageOrder = [
   { path: "/data-flow", label: "Data Flow" },
   { path: "/how-it-looks-legit", label: "How It Looks Legit" },
   { path: "/scam-messages", label: "Scam Messages" },
-  { path: "/final-pledge", label: "Final Pledge" },
   { path: "/scam-detection", label: "Scam Detection" },
-  { path: "/contact", label: "Contact Us" },
-  { path: "/roadmap", label: "Roadmap" },
-  { path: "/about-rotary", label: "About Rotary" },
+  { path: "/final-pledge", label: "Final Pledge" },
+  // { path: "/contact", label: "Contact Us" },
+  // { path: "/roadmap", label: "Roadmap" },
+  // { path: "/about-rotary", label: "About Rotary" },
 ];

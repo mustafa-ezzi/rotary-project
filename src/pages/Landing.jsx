@@ -120,45 +120,42 @@ const Landing = () => {
                         </div>
 
 
-                        <div className="max-w-5xl mx-auto mb-12 sm:mb-16 lg:mb-20 xl:mb-24 px-4">
-                            <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 backdrop-blur-xl rounded-3xl p-5 sm:p-7 lg:p-9 xl:p-12 border border-orange-500/30">
-                                <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                                    <div className="bg-orange-500/20 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0">
-                                        <AlertTriangle className="w-6 h-6 sm:w-7 sm:h-7 text-orange-400" />
+                        <div className="max-w-5xl mx-auto mb-12 sm:mb-16 lg:mb-20 xl:mb-24 px-3 sm:px-4">
+                            <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-9 xl:p-12 border border-orange-500/30">
+                                <div className="flex items-center gap-2 sm:gap-4 mb-4 sm:mb-8">
+                                    <div className="bg-orange-500/20 w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <AlertTriangle className="w-5 h-5 sm:w-7 sm:h-7 text-orange-400" />
                                     </div>
-                                    <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white">Awareness Example: Can You Spot the Scam?</h3>
+                                    <h3 className="text-base sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white">Awareness Example: Can You Spot the Scam?</h3>
                                 </div>
 
-                                <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-7 leading-relaxed">
-                                    Below is a sample scam message similar to those many Pakistanis receive daily.
-                                    This is only for educational purposes to help you stay alert.
+                                <p className="text-xs sm:text-base lg:text-lg text-gray-300 mb-4 sm:mb-7 leading-relaxed">
+                                    Below is a sample scam message similar to those many Pakistanis receive daily. This is only for educational purposes to help you stay alert.
                                 </p>
 
-                                <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-xl p-5 sm:p-6 lg:p-7 mb-6 sm:mb-7">
-                                    <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-5">
-                                        <div className="bg-red-500/20 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-lg sm:rounded-xl p-3 sm:p-6 lg:p-7 mb-4 sm:mb-7 overflow-hidden">
+                                    <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                                        <div className="hidden sm:block bg-red-500/20 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
                                             <AlertTriangle className="w-5 h-5 text-red-400" />
                                         </div>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="text-sm sm:text-base text-gray-400 mb-1 sm:mb-2">From: <span className="text-white font-medium break-all">no-reply@secure-banking-alert.com</span></p>
-                                            <p className="text-sm sm:text-base text-gray-400 mb-4">Subject: <span className="text-red-400 font-semibold">URGENT: Suspicious Activity Detected</span></p>
-                                            <div className="bg-slate-800/50 rounded-lg p-4 sm:p-5 border border-slate-600">
-                                                <p className="text-base sm:text-lg text-white mb-3 sm:mb-4">Dear Valued Customer,</p>
-                                                <p className="text-base sm:text-lg text-gray-300 mb-3 sm:mb-4 leading-relaxed">
-                                                    We detected unusual activity on your account. <span className="text-red-400 font-semibold">Your account will be suspended in 6 hours</span> unless you verify your identity immediately.
+                                        <div className="flex-1 min-w-0 w-full">
+                                            <p className="text-xs sm:text-sm text-gray-400 mb-0.5 sm:mb-2 truncate">From: <span className="text-white font-medium text-[0.7rem] sm:text-sm">no-reply@secure-banking-alert.com</span></p>
+                                            <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4">Subject: <span className="text-red-400 font-semibold text-[0.7rem] sm:text-sm">URGENT: Suspicious Activity Detected</span></p>
+                                            <div className="bg-slate-800/50 rounded-lg p-3 sm:p-5 border border-slate-600">
+                                                <p className="text-xs sm:text-base text-white mb-2 sm:mb-3 font-semibold">Dear Valued Customer,</p>
+                                                <p className="text-xs sm:text-base text-gray-300 mb-2 sm:mb-3 leading-relaxed">
+                                                    We detected unusual activity on your account. <span className="text-red-400 font-semibold">Your account will be suspended in 6 hours</span> unless you verify immediately.
                                                 </p>
-                                                <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-5 leading-relaxed">
-                                                    Click below to verify and prevent account closure:
-                                                </p>
-                                                <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-base sm:text-lg font-semibold w-full sm:w-auto">
+                                                {/* <p className="text-xs sm:text-base text-gray-300 mb-3 sm:mb-4 leading-relaxed">
+                                                    Click below to verify:
+                                                </p> */}
+                                                {/* <button className="bg-red-600 hover:bg-red-700 text-white px-3 sm:px-6 py-2 sm:py-3 rounded-lg text-xs sm:text-base font-semibold w-full sm:w-auto transition-colors">
                                                     Verify Now →
-                                                </button>
+                                                </button> */}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
 
