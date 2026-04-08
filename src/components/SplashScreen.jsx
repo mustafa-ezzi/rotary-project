@@ -77,9 +77,6 @@ const SplashScreen = ({ onComplete }) => {
         >
 
           {/* Welcome heading */}
-          <h1 className="cs-brand-text text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none">
-            Welcome to CyberShield
-          </h1>
 
           {/* Partner logos */}
           <div className="flex items-center justify-center flex-wrap gap-3">
@@ -97,6 +94,9 @@ const SplashScreen = ({ onComplete }) => {
           {/* Divider */}
           <div className="cs-divider h-px w-20 sm:w-32" />
 
+          <h1 className="cs-brand-text text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none">
+            Welcome to 
+          </h1>
           {/* Lock image */}
           <img
             src="/cybershield.png"
