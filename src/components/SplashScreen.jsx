@@ -179,14 +179,12 @@ const SplashScreen = ({ onComplete }) => {
           </div>
 
           {/* Heading */}
-          <p className="cs-credit-text text-[0.6rem] xs:text-[0.65rem] sm:text-xs md:text-sm font-bold tracking-[0.2em] text-slate-500 mb-4 sm:mb-6 md:mb-8 px-2">
-            Designed, Developed &amp; Presented By <br className="xs:hidden" />
-            <span className="hidden xs:inline">Rtr. Mustafa Ezzi / Rtr. Lamiya Antaria</span>
-            <span className="xs:hidden">
-              Rtr. Mustafa Ezzi <br /> Rtr. Lamiya Antaria
-            </span>
-            <br className="hidden xs:inline" />
-            <span className="text-[0.55rem] xs:text-[0.6rem] sm:text-xs">Club IT Chair / Club President</span>
+          <p className="cs-credit-text text-[0.6rem] xs:text-[0.65rem] sm:text-xs md:text-sm font-bold tracking-[0.2em] text-slate-500 mb-4 sm:mb-6 md:mb-8 px-2 leading-relaxed">
+            Designed, Developed &amp; Presented By <br />
+            <span className="block mt-1">Rtr. Mustafa Ezzi</span>
+            <span className="text-[0.55rem] xs:text-[0.6rem] sm:text-xs block">Club IT Chair</span>
+            <span className="block mt-2">Rtr. Lamiya Antaria</span>
+            <span className="text-[0.55rem] xs:text-[0.6rem] sm:text-xs block">Club President</span>
           </p>
 
           {/* CTA */}
