@@ -36,7 +36,7 @@ const ContactPage = () => {
 
             <div className="space-y-4">
               {cybercrimeContacts.map((contact, i) => (
-                <div key={i} className={`${contact.color} p-6 rounded-2xl text-white shadow-lg hover:shadow-xl transition-shadow`}>
+                <a key={i} href={`tel:${contact.phone.replace(/\s+/g, '')}`} className={`${contact.color} p-6 rounded-2xl text-white shadow-lg hover:shadow-xl transition-shadow block`}>
                   <div className="flex items-start justify-between">
                     <div>
                       <p className="text-xs opacity-80 uppercase font-bold tracking-widest mb-2">{contact.city}</p>
@@ -44,7 +44,7 @@ const ContactPage = () => {
                     </div>
                     <Phone className="w-6 h-6 opacity-60" />
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </section>
