@@ -58,25 +58,25 @@ body::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.4);
+  background: rgba(246, 228, 92, 0.4);
   border-radius: 999px;
 }
 
 html::-webkit-scrollbar-thumb:hover,
 body::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 92, 246, 0.8);
+  background: rgba(246, 228, 92, 0.4);
 }
 
 /* Firefox */
 html,
 body {
   scrollbar-width: thin;
-  scrollbar-color: rgba(139, 92, 246, 0.4) transparent;
+  scrollbar-color: rgba(246, 228, 92, 0.4);
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(139, 92, 246, 0.4) transparent;
+  scrollbar-color: rgba(246, 228, 92, 0.4);
 }
 
 .left{

@@ -39,6 +39,7 @@ function App() {
         <div className="flex min-h-screen w-full flex-col overflow-x-hidden animate-in fade-in duration-1000">
           <Navbar />
 
+            <PageNavigation />
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<LandingPage />} />
@@ -56,7 +57,6 @@ function App() {
               <Route path="/roadmap" element={<Roadmap />} />
               <Route path="/about-rotary" element={<AboutRotary />} />
             </Routes>
-            <PageNavigation />
           </main>
 
           <Footer />

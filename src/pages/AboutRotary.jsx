@@ -1,13 +1,13 @@
 import { Globe2, Handshake, Mail, ShieldCheck, Heart, BookOpen, Droplets, Leaf, Scale, TrendingUp, ChevronRight } from "lucide-react";
 
 const focusAreas = [
-  { label: "Maternal & Child Health", icon: Heart, color: "from-rose-500/20 to-pink-500/10", border: "border-rose-400/20", iconColor: "text-rose-300" },
-  { label: "Diseases Prevention & Treatment", icon: ShieldCheck, color: "from-sky-500/20 to-blue-500/10", border: "border-sky-400/20", iconColor: "text-sky-300" },
   { label: "Basic Education & Literacy", icon: BookOpen, color: "from-violet-500/20 to-purple-500/10", border: "border-violet-400/20", iconColor: "text-violet-300" },
+  { label: "Maternal & Child Health", icon: Heart, color: "from-rose-500/20 to-pink-500/10", border: "border-rose-400/20", iconColor: "text-rose-300" },
+  { label: "Diseases Prevention & Treatment", icon: ShieldCheck, color: "from-orange-500/20 to-amber-500/10 ", border: "border-sky-400/20", iconColor: "text-sky-300" },
   { label: "Water & Sanitation", icon: Droplets, color: "from-cyan-500/20 to-teal-500/10", border: "border-cyan-400/20", iconColor: "text-cyan-300" },
-  { label: "Environment", icon: Leaf, color: "from-emerald-500/20 to-green-500/10", border: "border-emerald-400/20", iconColor: "text-emerald-300" },
+  { label: "Community & Economic Development", icon: TrendingUp, color: "   from-emerald-500/20 to-green-500/10", border: "border-orange-400/20", iconColor: "text-orange-300" },
   { label: "Peace Building & Conflict Resolution", icon: Scale, color: "from-amber-500/20 to-yellow-500/10", border: "border-amber-400/20", iconColor: "text-amber-300" },
-  { label: "Community & Economic Development", icon: TrendingUp, color: "from-orange-500/20 to-amber-500/10", border: "border-orange-400/20", iconColor: "text-orange-300" },
+  { label: "Environment", icon: Leaf, color: " from-sky-500/20 to-blue-500/10", border: "border-emerald-400/20", iconColor: "text-emerald-300" },
 ];
 
 const highlights = [

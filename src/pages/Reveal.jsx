@@ -253,7 +253,7 @@ const Reveal = () => {
 
 
           <div className={`text-center space-y-4 transition-all duration-1000 delay-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <button
                 onClick={() => navigate("/")}
                 className="group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-2"
@@ -270,7 +270,7 @@ const Reveal = () => {
                 <BookOpen className="w-5 h-5" />
                 Show me data-flow
               </button>
-            </div>
+            </div> */}
 
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 max-w-3xl mx-auto">
               <p className="text-sm text-gray-400 mb-2">

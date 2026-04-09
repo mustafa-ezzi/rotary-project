@@ -59,7 +59,7 @@ const Landing = () => {
                                     <div className="text-base sm:text-sm lg:text-base text-gray-300">Individuals Educated Across Pakistan</div>
                                 </div>
                                 <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 sm:p-7 lg:p-8 border border-white/10 hover:bg-white/10 transition-all">
-                                    <div className="text-5xl sm:text-4xl lg:text-5xl font-bold text-blue-400 mb-2 sm:mb-3">15+</div>
+                                    <div className="text-5xl sm:text-4xl lg:text-5xl font-bold text-blue-400 mb-2 sm:mb-3">100+</div>
                                     <div className="text-base sm:text-sm lg:text-base text-gray-300">Real-Life Scam Examples</div>
                                 </div>
                                 <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 sm:p-7 lg:p-8 border border-white/10 hover:bg-white/10 transition-all">

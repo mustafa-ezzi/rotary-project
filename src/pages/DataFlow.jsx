@@ -398,23 +398,7 @@ const DataFlow = () => {
           </div>
 
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center scroll-fade">
-            <button
-              onClick={() => navigate("/")}
-              className="group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-2"
-            >
-              <Home className="w-5 h-5" />
-              Return to Home
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-
-            <button
-              onClick={() => navigate("/how-it-looks-legit")}
-              className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 border-2 border-gray-700 hover:border-gray-600"
-            >
-              How it looks legit
-            </button>
-          </div>
+         
 
 
           <div className="mt-12 text-center">

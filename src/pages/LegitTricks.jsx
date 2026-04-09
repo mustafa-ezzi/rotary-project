@@ -400,7 +400,7 @@ const LegitTricks = () => {
             They look exactly like something you've already trusted. That's the entire point. 
             <span className="block mt-2 text-red-400 font-bold">Your skepticism is your strongest defense.</span>
           </p>
-          <div className="inline-flex flex-col sm:flex-row gap-4">
+          {/* <div className="inline-flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => navigate("/")}
               className="group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-2"
@@ -415,7 +415,7 @@ const LegitTricks = () => {
               Some common messages
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-          </div>
+          </div> */}
         </div>
 
       </div>
