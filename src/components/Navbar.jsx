@@ -121,13 +121,13 @@ const Navbar = () => {
           flex-shrink: 0;
         }
         .nav-partner-img {
-          height: 32px; width: auto; object-fit: contain;
+          height: 44px; width: auto; object-fit: contain;
           opacity: 0.92; flex-shrink: 0;
           filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
           transition: opacity 0.2s, transform 0.22s;
         }
         @media (min-width: 1024px) { .nav-partner-img { height: 40px; } }
-        @media (min-width: 1280px) { .nav-partner-img { height: 44px; } }
+        @media (min-width: 1280px) { .nav-partner-img { height: 64px; } }
         .nav-partner-img:hover { opacity: 1; transform: scale(1.05); }
 
         /* ══ NAV LINKS (2xl+ only to avoid overflow) ══ */
