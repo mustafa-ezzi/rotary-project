@@ -174,7 +174,7 @@ const BankVerification = () => {
         {/* Action Button */}
         <div className="mt-8">
           <button
-            onClick={() => navigate("/verify")}
+            onClick={() => navigate("/verify?step=1")}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl transition-all shadow-xl shadow-blue-100 flex items-center justify-center gap-3 text-sm sm:text-lg"
           >
             <Lock size={20} />

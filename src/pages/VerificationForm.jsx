@@ -1,12 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Shield, Lock, AlertTriangle, CheckCircle, Eye, EyeOff, Clock, Info, ArrowRight, CreditCard } from "lucide-react";
 
 const VerificationForm = () => {
     const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
     const [timeLeft, setTimeLeft] = useState(180);
     const [showPassword, setShowPassword] = useState(false);
-    const [step, setStep] = useState(1);
+    const [step, setStep] = useState(() => (searchParams.get("step") === "2" ? 2 : 1));
     const [formData, setFormData] = useState({
         fullName: "Ahmed Hassan Khan",
         cnic: "42101-1234567-8",
@@ -26,6 +27,10 @@ const VerificationForm = () => {
         }, 1000);
         return () => clearInterval(timer);
     }, []);
+
+    useEffect(() => {
+        setStep(searchParams.get("step") === "2" ? 2 : 1);
+    }, [searchParams]);
 
     const formatTime = (seconds) => {
         const mins = Math.floor(seconds / 60);
@@ -60,6 +65,7 @@ const VerificationForm = () => {
         if (step === 1) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             setStep(2);
+            setSearchParams({ step: "2" });
         } else {
             navigate("/otp");
         }
@@ -194,7 +200,7 @@ const VerificationForm = () => {
                             </button>
 
                             {step === 2 && (
-                                <button type="button" onClick={() => setStep(1)} className="w-full text-gray-500 text-sm font-medium hover:text-gray-700">
+                                <button type="button" onClick={() => { setStep(1); setSearchParams({ step: "1" }); }} className="w-full text-gray-500 text-sm font-medium hover:text-gray-700">
                                     ← Edit Personal Information
                                 </button>
                             )}

@@ -4,7 +4,9 @@ import { pageOrder } from "../data/pageOrder";
 
 const PageNavigation = () => {
   const location = useLocation();
-  const currentIndex = pageOrder.findIndex((page) => page.path === location.pathname);
+  const currentIndex = pageOrder.findIndex((page) =>
+    page.matches ? page.matches(location) : page.path === location.pathname
+  );
 
   if (currentIndex === -1) return null;
 
