@@ -14,7 +14,7 @@ const Landing = () => {
                         <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
                     </div>
 
-                    <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 xl:py-20">
+                    <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-2 xl:py-6">
 
                         <div className="max-w-6xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20 xl:mb-24">
                             <div className="inline-flex items-center gap-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-5 sm:px-6 py-2.5 sm:py-3 mb-6 sm:mb-8">
@@ -30,7 +30,7 @@ const Landing = () => {
                                 </span>
                             </h1>
 
-                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 px-4 leading-relaxed">
+                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-6 sm:mb-6 lg:mb-6 px-4 leading-relaxed">
                                 Objective of this program is to educate students, families, and communities about online scams, fraud, and digital risks.
                                 Through real-life examples and safe simulations, This program aims to guide you to recognize red flags before it's too late.
                             </p>
@@ -53,7 +53,7 @@ const Landing = () => {
                             </div>
 
 
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mt-12 sm:mt-16 lg:mt-20 max-w-4xl mx-auto px-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mt-6 sm:mt-6 lg:mt-6 max-w-4xl mx-auto px-4">
                                 <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 sm:p-7 lg:p-8 border border-white/10 hover:bg-white/10 transition-all">
                                     <div className="text-5xl sm:text-4xl lg:text-5xl font-bold text-purple-400 mb-2 sm:mb-3">22%</div>
                                     <div className="text-base sm:text-sm lg:text-base text-gray-300">Individuals Educated Across Pakistan</div>
