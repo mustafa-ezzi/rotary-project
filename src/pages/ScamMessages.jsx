@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MessageSquare, Mail, Phone, AlertTriangle, Shield, Eye, XCircle, CheckCircle, Smartphone, Package, CreditCard, Clock, TrendingUp, Award, Home, ArrowRight, Info } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import ScrollCue from "../components/ScrollCue";
 
 const ScamMessages = () => {
   const navigate = useNavigate();
@@ -370,6 +371,8 @@ const ScamMessages = () => {
             These are actual scam message templates used by criminals. Learn to recognize them before you become a victim.
           </p>
         </div>
+
+        <ScrollCue className="mb-12" />
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 mb-12">
           {categorySections.map((section) => (

@@ -6,6 +6,7 @@ import {
   Fingerprint, MousePointerClick, Smartphone, 
   ChevronRight, ShieldCheck 
 } from "lucide-react";
+import ScrollCue from "../components/ScrollCue";
 
 const FinalPledge = () => {
   const [pledged, setPledged] = useState(false);
@@ -147,6 +148,8 @@ const FinalPledge = () => {
             Education is the shield, but <span className="text-white font-bold">action</span> is the sword. Choose your commitments to finalize your training.
           </p>
         </div>
+
+        <ScrollCue className="mb-12" />
 
         <div className="grid lg:grid-cols-3 gap-8">
           

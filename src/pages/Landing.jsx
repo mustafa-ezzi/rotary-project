@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Shield, Lock, Eye, AlertTriangle, Users, CheckCircle, ArrowRight, Zap, Target, TrendingUp } from "lucide-react";
+import ScrollCue from "../components/ScrollCue";
 
 const Landing = () => {
     return (
@@ -67,6 +68,8 @@ const Landing = () => {
                                     <div className="text-base sm:text-sm lg:text-base text-gray-300">Free Public Awareness Initiative</div>
                                 </div>
                             </div>
+
+                            <ScrollCue className="mt-8 sm:mt-10" />
                         </div>
 
 

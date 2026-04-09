@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AlertTriangle, ShieldAlert, XCircle, TrendingDown, Eye, Copy, Lock, CreditCard, User, Mail, Phone, Key, Award, ArrowRight, Home, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ScrollCue from "../components/ScrollCue";
 
 const Reveal = () => {
   const navigate = useNavigate();
@@ -131,6 +132,8 @@ const Reveal = () => {
               <span className="text-red-400 font-semibold">Your data would be compromised in real-time</span>
             </div>
           </div>
+
+          <ScrollCue className="mb-12" />
 
 
           <div className={`mb-12 transition-all duration-1000 delay-300 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>

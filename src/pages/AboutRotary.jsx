@@ -1,4 +1,5 @@
 import { Globe2, Handshake, Mail, ShieldCheck, Heart, BookOpen, Droplets, Leaf, Scale, TrendingUp, ChevronRight } from "lucide-react";
+import ScrollCue from "../components/ScrollCue";
 
 const focusAreas = [
   { label: "Basic Education & Literacy", icon: BookOpen, color: "from-violet-500/20 to-purple-500/10", border: "border-violet-400/20", iconColor: "text-violet-300" },
@@ -106,6 +107,8 @@ const AboutRotary = () => {
               </div>
             ))}
           </div>
+
+          <ScrollCue className="mt-2" />
 
           {/* Focus Areas + Mission */}
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">

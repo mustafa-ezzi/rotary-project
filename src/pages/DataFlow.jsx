@@ -5,6 +5,7 @@ import {
   ArrowRight, Server, Lock, Eye, Skull, Home, Clock
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ScrollCue from "../components/ScrollCue";
 
 const DataFlow = () => {
   const navigate = useNavigate();
@@ -247,6 +248,8 @@ const DataFlow = () => {
               <span className="text-red-400 text-sm font-semibold">Real criminal workflow - Educational simulation</span>
             </div>
           </div>
+
+          <ScrollCue className="mb-12" />
 
 
           <div className="relative mb-16">

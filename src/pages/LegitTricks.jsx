@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Shield, Lock, Clock, MessageSquare, Eye, Globe, AlertTriangle, CheckCircle, XCircle, Mail, Phone, CreditCard, User, TrendingUp, Target, Zap, Award, Brain, Home, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ScrollCue from "../components/ScrollCue";
 
 const LegitTricks = () => {
   const navigate = useNavigate();
@@ -284,6 +285,8 @@ const LegitTricks = () => {
               Defense Strategies
             </button>
           </div>
+
+          <ScrollCue className="mb-12" />
         </div>
 
         {activeTab === 'tricks' && (
