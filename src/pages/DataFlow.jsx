@@ -221,11 +221,11 @@ const DataFlow = () => {
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
-      <div className="relative z-10 px-4 sm:px-6 py-12 sm:py-16 flex justify-center">
+      <div className="relative z-10 px-4 sm:px-6 py-12 sm:py-4 flex justify-center">
         <div className="max-w-6xl w-full">
 
 
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-12 sm:mb-4">
             <div className="flex justify-center mb-6">
               <div className="relative">
                 <div className="absolute inset-0 bg-red-600/50 blur-2xl animate-pulse"></div>

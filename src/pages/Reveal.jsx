@@ -105,15 +105,15 @@ const Reveal = () => {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-16">
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-4">
         <div className="max-w-6xl w-full">
 
 
-          <div className={`text-center mb-12 transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+          <div className={`text-center mb-4 transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
             <div className="flex justify-center mb-6">
               <div className="relative">
                 <div className="absolute inset-0 bg-red-600 blur-2xl opacity-50 animate-pulse"></div>
-                <div className="relative bg-gradient-to-br from-red-600 to-red-800 p-6 rounded-3xl">
+                <div className="relative bg-gradient-to-br from-red-600 to-red-800 p-2 rounded-3xl">
                   <AlertTriangle className="w-20 h-20 text-white animate-bounce" />
                 </div>
               </div>
@@ -123,7 +123,7 @@ const Reveal = () => {
               🚨 THIS WAS A SIMULATION 🚨
             </h1>
 
-            <p className="text-xl sm:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl text-gray-300 mb-4 mx-auto">
               If this were a <span className="text-red-500 font-bold">REAL SCAM</span>, everything you just entered would now be in the hands of criminals.
             </p>
 
@@ -137,7 +137,7 @@ const Reveal = () => {
 
 
           <div className={`mb-12 transition-all duration-1000 delay-300 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="bg-gradient-to-br from-gray-900 to-red-900/30 border-2 border-red-600/50 rounded-3xl p-8 backdrop-blur-xl">
+            <div className="bg-gradient-to-br from-gray-900 to-red-900/30 border-2 border-red-600/50 rounded-3xl p-4 backdrop-blur-xl">
               <div className="text-center mb-6">
                 <h2 className="text-2xl sm:text-3xl font-bold text-red-400 mb-2 flex items-center justify-center gap-2">
                   <Eye className="w-8 h-8" />

@@ -66,7 +66,7 @@ const VerificationForm = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center px-4 py-8 bg-[#f8fafc]">
+        <div className="min-h-screen flex items-center justify-center px-4 py-4 bg-[#f8fafc]">
             <div className="max-w-2xl w-full">
                 {/* Header Section */}
                 <div className="text-center mb-8">

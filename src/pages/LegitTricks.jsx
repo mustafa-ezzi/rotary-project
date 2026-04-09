@@ -234,26 +234,26 @@ const LegitTricks = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py4">
         
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-12 sm:mb-1">
           <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/30 rounded-full px-6 py-2 mb-6">
             <AlertTriangle className="w-5 h-5 text-red-400" />
             <span className="text-sm font-semibold text-red-300">Critical Knowledge</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 leading-tight">
             How Scammers Make It Look
             <span className="block bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
               100% Legitimate
             </span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-4">
             These are not mistakes. They are <span className="text-red-400 font-bold">calculated psychological weapons</span> designed to exploit how your brain works.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
             <button
               onClick={() => setActiveTab('tricks')}
               className={`px-6 py-3 rounded-xl font-semibold transition-all ${

@@ -51,9 +51,9 @@ const AboutRotary = () => {
         <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-48 w-96 rounded-full bg-blue-600/10 blur-3xl pointer-events-none" />
 
-        <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
+        <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-12">
 
-          {/* Logo */}
+
           <div className="flex justify-center">
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-sky-500/20 blur-2xl scale-110" />
