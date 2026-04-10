@@ -20,6 +20,7 @@ import AboutRotary from "./pages/AboutRotary";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PageNavigation from "./components/PageNavigation";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const location = useLocation();
@@ -38,8 +39,9 @@ function App() {
         /* 2. Show Main App once loading is false */
         <div className="flex min-h-screen w-full flex-col overflow-x-hidden animate-in fade-in duration-1000">
           <Navbar />
+          <ScrollToTop />
 
-            <PageNavigation />
+          <PageNavigation />
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<LandingPage />} />
