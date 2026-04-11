@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react"; // Added useState
-import SplashScreen from "./components/SplashScreen"; // Import your new component
+import { useEffect, useState } from "react";
+import SplashScreen from "./components/SplashScreen";
+import InstallPrompt from "./components/InstallPrompt";
 
 // Page Imports
 import BankVerification from "./pages/BankVerification";
@@ -62,6 +63,7 @@ function App() {
           </main>
 
           <Footer />
+          <InstallPrompt />
         </div>
       )}
     </>

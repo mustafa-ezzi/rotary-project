@@ -113,3 +113,13 @@ button:focus-visible {
 .left{
   margin-left: 230px;
 }
+
+/* PWA install chip — pinned bottom-left (scroll-to-top stays bottom-right) */
+.install-prompt-chip {
+  position: fixed !important;
+  bottom: max(1.5rem, env(safe-area-inset-bottom)) !important;
+  left: max(1rem, env(safe-area-inset-left)) !important;
+  right: auto !important;
+  top: auto !important;
+  z-index: 10002;
+}

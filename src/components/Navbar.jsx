@@ -337,7 +337,6 @@ const Navbar = () => {
             ))}
           </nav>
 
-
         </div>
 
         {/* Footer */}
