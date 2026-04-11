@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import ScrollCue from "../components/ScrollCue";
 
-const PLEDGE_MSG = `🛡️ I've officially taken the *CyberShield Pledge* to stay safe from digital scams!\n\n✅ I will never share OTPs with anyone\n✅ I will verify URLs before clicking\n✅ I will question urgent requests\n✅ I will educate my family about scams\n\n#CyberShield #StaySafe #DigitalPakistan 🇵🇰\n\nLearn more at CyberShield Awareness Program 2025`;
+const PLEDGE_MSG = `🛡️ I've officially taken the *CyberShield Pledge* to stay safe from digital scams!\n\n✅ I will never share OTPs with anyone\n✅ I will verify URLs before clicking\n✅ I will question urgent requests\n✅ I will educate my family about scams\n\n#CyberShield #StaySafe #DigitalPakistan 🇵🇰\n\n🔗 Take the pledge: https://cybershield-rotary.vercel.app/`;
 
 const FinalPledge = () => {
   const [pledged, setPledged] = useState(false);
@@ -49,7 +49,7 @@ const FinalPledge = () => {
       .filter(c => selectedCommitments.includes(c.id))
       .map(c => `✅ ${c.text}`)
       .join("\n");
-    return `🛡️ I've officially taken the *CyberShield Pledge* to stay safe from digital scams!\n\nMy commitments:\n${chosen}\n\n#CyberShield #StaySafe #DigitalPakistan 🇵🇰\nCyberShield Awareness Program 2025`;
+    return `🛡️ I've officially taken the *CyberShield Pledge* to stay safe from digital scams!\n\nMy commitments:\n${chosen}\n\n#CyberShield #StaySafe #DigitalPakistan 🇵🇰\n\n🔗 Take the pledge: https://cybershield-rotary.vercel.app/`;
   };
 
   const openWhatsApp = () => {
