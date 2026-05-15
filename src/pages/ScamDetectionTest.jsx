@@ -15,6 +15,14 @@ const questions = [
         icon: AlertTriangle,
     },
     {
+        text: "Congratulations! You won Rs. 50,000 from JazzCash. Claim now by sending CNIC.",
+        correct: "scam",
+        explanation: "Official companies never ask for CNIC via SMS to 'claim' prizes.",
+        redFlags: ["Unexpected prize", "Requests CNIC"],
+        technique: "Social Engineering",
+        icon: Target,
+    },
+     {
         text: "Dear customer, your Easypaisa OTP is 839201. Do not share it with anyone.",
         correct: "safe",
         explanation: "Standard OTP. It explicitly tells you NOT to share it.",
@@ -22,13 +30,13 @@ const questions = [
         technique: "Security OTP",
         icon: CheckCircle,
     },
-    {
-        text: "Congratulations! You won Rs. 50,000 from JazzCash. Claim now by sending CNIC.",
+     {
+        text: "BISP Alert: Payment approved. Call 0300-1234567 to collect cash immediately.",
         correct: "scam",
-        explanation: "Official companies never ask for CNIC via SMS to 'claim' prizes.",
-        redFlags: ["Unexpected prize", "Requests CNIC"],
-        technique: "Social Engineering",
-        icon: Target,
+        explanation: "Government programs use official short-codes, not mobile numbers.",
+        redFlags: ["Random number", "Financial bait"],
+        technique: "Smishing",
+        icon: Clock,
     },
     {
         text: "Meezan Bank: Your account statement is ready in your official mobile app.",
@@ -38,14 +46,7 @@ const questions = [
         technique: "Official Advisory",
         icon: Shield,
     },
-    {
-        text: "BISP Alert: Payment approved. Call 0300-1234567 to collect cash immediately.",
-        correct: "scam",
-        explanation: "Government programs use official short-codes, not mobile numbers.",
-        redFlags: ["Random number", "Financial bait"],
-        technique: "Smishing",
-        icon: Clock,
-    },
+   
 ];
 
 export default function ScamDetectionTest() {
