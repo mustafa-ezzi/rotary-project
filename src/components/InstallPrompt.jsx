@@ -136,7 +136,7 @@ export default function InstallPrompt() {
           className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/70 transition-colors hover:bg-black/90"
           aria-label="Hide install button"
         >
-          <X size={10} className="text-white/70" />
+          X
         </button>
       </div>,
       document.body
@@ -216,7 +216,7 @@ function InstallSheet({
             <img
               src="/pwa-192x192.png"
               alt="CyberShield"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain bg-black"
             />
           </div>
           <div className="min-w-0 flex-1">

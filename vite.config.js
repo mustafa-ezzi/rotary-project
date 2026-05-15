@@ -6,14 +6,14 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       includeAssets: ['favicon.ico', 'cybershield.png', 'Logos.png', 'og-image.png'],
       manifest: {
         name: 'CyberShield – Digital Safety Awareness',
         short_name: 'CyberShield',
         description: 'An educational awareness platform helping people recognize online scams, phishing, and digital fraud.',
-        theme_color: '#070b18',
-        background_color: '#070b18',
+        theme_color: '#000000',
+        background_color: '#000000',
         display: 'standalone',
         orientation: 'portrait',
         scope: '/',
@@ -24,11 +24,13 @@ export default defineConfig({
             src: '/pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png',
+            purpose: 'any',
           },
           {
             src: '/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
+            purpose: 'any',
           },
           {
             src: '/pwa-512x512.png',
