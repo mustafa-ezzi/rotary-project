@@ -25,7 +25,7 @@ export default function UpdatePrompt() {
         WebkitBackdropFilter: "blur(8px)",
       }}
     >
-      <motionDiv
+      <div
         className="pwa-update-card"
         style={{
           width: "100%",
@@ -78,7 +78,7 @@ export default function UpdatePrompt() {
                 alt=""
                 style={{ width: "2rem", height: "2rem", objectFit: "contain" }}
               />
-            </motionDiv>
+            </div>
             <div>
               <p
                 id="pwa-update-title"
@@ -104,8 +104,8 @@ export default function UpdatePrompt() {
               >
                 New version available
               </p>
-            </motionDiv>
-          </motionDiv>
+            </div>
+          </div>
 
           <p
             style={{
@@ -147,8 +147,8 @@ export default function UpdatePrompt() {
             Update app
             <Sparkles size={14} style={{ opacity: 0.85 }} />
           </button>
-        </motionDiv>
-      </motionDiv>
+        </div>
+      </div>
 
       <style>{`
         @keyframes pwaUpdateIn {
@@ -156,7 +156,7 @@ export default function UpdatePrompt() {
           to { opacity: 1; transform: scale(1) translateY(0); }
         }
       `}</style>
-    </motionDiv>,
+    </div>,
     document.body
   );
 }

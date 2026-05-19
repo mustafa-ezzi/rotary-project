@@ -1,4 +1,7 @@
 ﻿import React from "react";
+import { Mail } from "lucide-react";
+
+const ORG_EMAIL = "cybershieldsafecity@gmail.com";
 
 const SplashScreen = ({ onComplete }) => {
   const partnerLogos = [
@@ -48,6 +51,59 @@ const SplashScreen = ({ onComplete }) => {
         }
         .cs-btn-gradient:hover { transform: scale(1.06); box-shadow: 0 8px 40px rgba(139,92,246,0.7) !important; }
         .cs-btn-gradient:active { transform: scale(0.97); }
+
+        .cs-email-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.65rem;
+          max-width: 100%;
+          padding: 0.55rem 1rem 0.55rem 0.75rem;
+          border-radius: 999px;
+          text-decoration: none;
+          background: rgba(255, 255, 255, 0.07);
+          border: 1px solid rgba(167, 139, 250, 0.45);
+          box-shadow: 0 0 24px rgba(139, 92, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+        .cs-email-pill:hover {
+          transform: translateY(-1px);
+          border-color: rgba(244, 114, 182, 0.65);
+          box-shadow: 0 0 32px rgba(139, 92, 246, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+        .cs-email-pill:active { transform: scale(0.98); }
+        .cs-email-icon {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background: linear-gradient(130deg, rgba(236,72,153,0.35), rgba(139,92,246,0.45));
+          color: #fff;
+        }
+        .cs-email-label {
+          font-size: clamp(0.5rem, 1.1vmin, 0.65rem);
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: rgba(167, 139, 250, 0.95);
+          line-height: 1.2;
+        }
+        .cs-email-address {
+          font-size: clamp(0.65rem, 1.5vmin, 0.88rem);
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          color: #f8fafc;
+          line-height: 1.2;
+          word-break: break-all;
+        }
+        @media (max-width: 380px) {
+          .cs-email-pill { flex-wrap: wrap; justify-content: center; border-radius: 1rem; padding: 0.65rem 0.85rem; }
+          .cs-email-text { text-align: center; width: 100%; }
+        }
 
         @media (max-height: 600px) {
           .cs-partner-img   { height: 3rem !important; }
@@ -116,6 +172,20 @@ const SplashScreen = ({ onComplete }) => {
               An Initiative Dedicated to Fostering Digital Safety Awareness
             </p>
           </div>
+
+          <a
+            href={`mailto:${ORG_EMAIL}`}
+            className="cs-email-pill"
+            aria-label={`Official email: ${ORG_EMAIL}`}
+          >
+            <span className="cs-email-icon" aria-hidden="true">
+              <Mail size={16} strokeWidth={2.25} />
+            </span>
+            <span className="cs-email-text flex flex-col items-start text-left min-w-0">
+              <span className="cs-email-label">Official Contact</span>
+              <span className="cs-email-address">{ORG_EMAIL}</span>
+            </span>
+          </a>
 
           {/* Separator dots */}
           <div className="flex items-center justify-center gap-1 sm:gap-2">
