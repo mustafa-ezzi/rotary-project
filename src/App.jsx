@@ -18,6 +18,7 @@ import ScamDetect from "./pages/ScamDetectionTest";
 import ContactPage from "./pages/ContactPage";
 import Roadmap from "./pages/Roadmap";
 import AboutRotary from "./pages/AboutRotary";
+import CaseExamples from "./pages/CaseExamples";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PageNavigation from "./components/PageNavigation";
@@ -59,6 +60,7 @@ function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/roadmap" element={<Roadmap />} />
               <Route path="/about-rotary" element={<AboutRotary />} />
+              <Route path="/cases" element={<CaseExamples />} />
             </Routes>
           </main>
 

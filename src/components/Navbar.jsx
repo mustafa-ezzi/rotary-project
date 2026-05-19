@@ -32,6 +32,7 @@ const Navbar = () => {
     // { name: "Presenter", path: "/presenter" },
     { name: "Roadmap", path: "/roadmap" },
     { name: "Reveal", path: "/reveal" },
+    { name: "Cases", path: "/cases" },
     { name: "Cybercrime Cell", path: "/contact" },
     { name: "About Rotary", path: "/about-rotary" },
   ];
