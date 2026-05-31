@@ -28,12 +28,10 @@ const Navbar = () => {
 
   const links = [
     { name: "Home", path: "/" },
-    { name: "Training", path: "/bank-verification" },
-    // { name: "Presenter", path: "/presenter" },
-    { name: "Roadmap", path: "/roadmap" },
-    { name: "Reveal", path: "/reveal" },
-    { name: "Cases", path: "/cases" },
-    { name: "Cybercrime Cell", path: "/contact" },
+    { name: "Awareness", path: "/bank-verification" },
+    { name: "Preventions", path: "/roadmap" },
+    { name: "Cyber Crime Officia", path: "/contact" },
+    { name: "Feedback Portal", path: "/reveal" },
     { name: "About Rotary", path: "/about-rotary" },
   ];
 
