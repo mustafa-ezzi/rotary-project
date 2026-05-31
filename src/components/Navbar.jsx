@@ -31,7 +31,7 @@ const Navbar = () => {
     { name: "Awareness", path: "/bank-verification" },
     { name: "Preventions", path: "/roadmap" },
     { name: "Cyber Crime Officia", path: "/contact" },
-    { name: "Feedback Portal", path: "/reveal" },
+    { name: "Feedback Portal", path: "/feedback" },
     { name: "About Rotary", path: "/about-rotary" },
   ];
 

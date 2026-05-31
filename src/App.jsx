@@ -19,6 +19,7 @@ import ContactPage from "./pages/ContactPage";
 import Roadmap from "./pages/Roadmap";
 import AboutRotary from "./pages/AboutRotary";
 import CaseExamples from "./pages/CaseExamples";
+import FeedbackPortal from "./pages/FeedbackPortal";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PageNavigation from "./components/PageNavigation";
@@ -58,6 +59,7 @@ function App() {
               <Route path="/final-pledge" element={<FinalPledge />} />
               <Route path="/scam-detection" element={<ScamDetect />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/feedback" element={<FeedbackPortal />} />
               <Route path="/roadmap" element={<Roadmap />} />
               <Route path="/about-rotary" element={<AboutRotary />} />
               <Route path="/cases" element={<CaseExamples />} />
