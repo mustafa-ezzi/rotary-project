@@ -4,10 +4,6 @@ import { Mail } from "lucide-react";
 const ORG_EMAIL = "cybershieldsafecity@gmail.com";
 
 const SplashScreen = ({ onComplete }) => {
-  const partnerLogos = [
-    { src: "/Logos.png", alt: "District 3271" },
-  ];
-
   return (
     <>
       <style>{`
@@ -106,7 +102,6 @@ const SplashScreen = ({ onComplete }) => {
         }
 
         @media (max-height: 600px) {
-          .cs-partner-img   { height: 3rem !important; }
           .cs-lock-img      { height: 5rem !important; }
           .cs-subtitle      { font-size: 0.6rem !important; }
           .cs-credit-text   { font-size: 0.55rem !important; }
@@ -132,22 +127,6 @@ const SplashScreen = ({ onComplete }) => {
           style={{ height: "100dvh" }}
         >
 
-          {/* Welcome heading */}
-
-          {/* Partner logos */}
-          <div className="flex items-center justify-center flex-wrap gap-3">
-            {partnerLogos.map((logo) => (
-              <img
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                className="cs-partner-img w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-                style={{ height: "clamp(4rem, 10vmin, 9rem)" }}
-              />
-            ))}
-          </div>
-
-          {/* Divider */}
           <div className="cs-divider h-px w-20 sm:w-32" />
 
           <h1 className="cs-brand-text text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none">
@@ -163,10 +142,6 @@ const SplashScreen = ({ onComplete }) => {
 
           {/* Subtitles */}
           <div className="cs-subtitle flex flex-col gap-0.5 sm:gap-1">
-            <p className="font-bold uppercase tracking-[0.2em] text-violet-400"
-              style={{ fontSize: "clamp(0.6rem, 1.6vmin, 1rem)" }}>
-              A Project of Rotaract Club Karachi Safe City
-            </p>
             <p className="font-bold tracking-[0.18em] text-violet-400"
               style={{ fontSize: "clamp(0.6rem, 1.6vmin, 1rem)" }}>
               An Initiative Dedicated to Fostering Digital Safety Awareness
@@ -200,30 +175,12 @@ const SplashScreen = ({ onComplete }) => {
           <div className="cs-credit-section w-full">
             <p className="cs-credit-text font-bold tracking-[0.18em] text-slate-500 mb-2"
               style={{ fontSize: "clamp(0.6rem, 1.4vmin, 0.85rem)" }}>
-              Designed, Developed &amp; Presented By
+              Developed by
             </p>
-            <div className="flex gap-12 sm:gap-20 justify-center px-4">
-              <div className="text-center">
-                <p className="font-bold tracking-[0.15em] text-slate-400"
-                  style={{ fontSize: "clamp(0.65rem, 1.6vmin, 0.95rem)" }}>
-                  Rtr. Mustafa Ezzi
-                </p>
-                <p className="font-semibold tracking-[0.15em] text-slate-600 mt-0.5"
-                  style={{ fontSize: "clamp(0.55rem, 1.3vmin, 0.8rem)" }}>
-                  Club IT Chair
-                </p>
-              </div>
-              <div className="text-center">
-                <p className="font-bold tracking-[0.15em] text-slate-400"
-                  style={{ fontSize: "clamp(0.65rem, 1.6vmin, 0.95rem)" }}>
-                  Rtr. Lamiya Antaria
-                </p>
-                <p className="font-semibold tracking-[0.15em] text-slate-600 mt-0.5"
-                  style={{ fontSize: "clamp(0.55rem, 1.3vmin, 0.8rem)" }}>
-                  Club President
-                </p>
-              </div>
-            </div>
+            <p className="font-bold tracking-[0.15em] text-slate-400"
+              style={{ fontSize: "clamp(0.65rem, 1.6vmin, 0.95rem)" }}>
+              Mustafa Moiz Ezzy
+            </p>
           </div>
 
           {/* CTA */}

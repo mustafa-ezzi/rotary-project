@@ -32,11 +32,6 @@ const Navbar = () => {
     { name: "Preventions", path: "/roadmap" },
     { name: "Cyber Crime Officia", path: "/contact" },
     { name: "Feedback Portal", path: "/feedback" },
-    { name: "About Rotary", path: "/about-rotary" },
-  ];
-
-  const partnerLogos = [
-    { src: "/Logos.png", alt: "District 3271" },
   ];
 
   const isActive = (path) =>
@@ -101,33 +96,6 @@ const Navbar = () => {
           50%      { filter: drop-shadow(0 0 14px rgba(244,114,182,0.8)) drop-shadow(0 0 24px rgba(139,92,246,0.45)); }
         }
         .nav-logo-glow { animation: navglow 3.5s ease-in-out infinite; }
-
-        /* ══ PARTNER LOGOS (center, md+) ══ */
-        .nav-partners {
-          display: none;
-          align-items: center;
-          justify-content: center;
-          flex: 1;
-          gap: 20px;
-          padding: 0 12px;
-          min-width: 0;
-        }
-        @media (min-width: 768px) { .nav-partners { display: flex; } }
-
-        .nav-divider {
-          width: 1px; height: 36px;
-          background: rgba(255,255,255,0.28);
-          flex-shrink: 0;
-        }
-        .nav-partner-img {
-          height: 44px; width: auto; object-fit: contain;
-          opacity: 0.92; flex-shrink: 0;
-          filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
-          transition: opacity 0.2s, transform 0.22s;
-        }
-        @media (min-width: 1024px) { .nav-partner-img { height: 40px; } }
-        @media (min-width: 1280px) { .nav-partner-img { height: 64px; } }
-        .nav-partner-img:hover { opacity: 1; transform: scale(1.05); }
 
         /* ══ NAV LINKS (2xl+ only to avoid overflow) ══ */
         .nav-links-wrap {
@@ -248,12 +216,6 @@ const Navbar = () => {
         .m-link-row:hover, .m-link-row.active {
           background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.11);
         }
-
-        .glass-pill {
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.12);
-          border-radius: 14px; padding: 16px 18px;
-        }
       `}</style>
 
       {/* ══ NAVBAR ══ */}
@@ -265,15 +227,6 @@ const Navbar = () => {
           <Link to="/" style={{ display: "flex", alignItems: "center", flexShrink: 0, textDecoration: "none", marginRight: "8px" }}>
             <img src="/cybershield.png" alt="CyberShield" className="nav-logo-img nav-logo-glow" />
           </Link>
-
-          {/* Partner logos — center (md+) */}
-          <div className="nav-partners">
-            <div className="nav-divider" />
-            {partnerLogos.map((logo) => (
-              <img key={logo.alt} src={logo.src} alt={logo.alt} className="nav-partner-img" />
-            ))}
-            <div className="nav-divider" />
-          </div>
 
           {/* Nav links + CTA (2xl+) */}
           <div className="nav-links-wrap">
@@ -312,13 +265,6 @@ const Navbar = () => {
         {/* Body */}
         <div className="drawer-body">
 
-          {/* Big partner logo in drawer */}
-          <div className="glass-pill" style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
-            {partnerLogos.map((logo) => (
-              <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: "40px", width: "auto", objectFit: "contain", opacity: 0.9 }} />
-            ))}
-          </div>
-
           {/* Links */}
           <nav>
             {links.map((link, i) => (
@@ -341,7 +287,7 @@ const Navbar = () => {
         {/* Footer */}
         <div style={{ padding: "12px 20px", borderTop: "1px solid rgba(255,255,255,0.07)", flexShrink: 0 }}>
           <p style={{ fontSize: "8px", textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(255,255,255,0.2)", textAlign: "center", fontWeight: 700, margin: 0 }}>
-            CyberShield · RCK Safe City · Karachi
+            CyberShield · Digital Safety Awareness
           </p>
         </div>
       </div>

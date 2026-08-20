@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'prompt',
-      includeAssets: ['favicon.ico', 'cybershield.png', 'Logos.png', 'og-image.png'],
+      includeAssets: ['favicon.ico', 'cybershield.png', 'og-image.png'],
       manifest: {
         name: 'CyberShield – Digital Safety Awareness',
         short_name: 'CyberShield',

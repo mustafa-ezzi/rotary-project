@@ -1,13 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Heart, ExternalLink, ShieldCheck, Award } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const Footer = () => {
-  const partnerLogos = [
-    { src: "/Logos.png", alt: "District 3271" },
- 
-  ];
-
   return (
     <footer className="w-full bg-slate-950 border-t border-white/5 relative overflow-hidden">
       {/* Subtle Glow Effect */}
@@ -17,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           
           {/* Brand Info (Takes 4 cols) */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
               <img src="/cybershield.png" alt="Logo" className="w-10 h-12 object-contain" />
               <div className="flex flex-col">
@@ -34,25 +29,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Partners Section (Takes 5 cols) - Added Here */}
-          <div className="lg:col-span-5 space-y-6">
-            <h4 className="text-white font-bold text-xs uppercase tracking-[0.2em] flex items-center gap-2">
-              <Award className="w-4 h-4 text-purple-500" /> Official  Chapters
-            </h4>
-            <div className="flex flex-wrap items-center gap-6 md:gap-8 bg-white/[0.02] p-6 rounded-2xl border border-white/5">
-              {partnerLogos.map((logo, index) => (
-                <img 
-                  key={index} 
-                  src={logo.src} 
-                  alt={logo.alt} 
-                  className="h-10 md:h-14 w-auto object-contain hover:scale-110 transition-transform duration-300"
-                />
-              ))}
-            </div>
-          </div>
-
           {/* Quick Links (Takes 3 cols) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 lg:col-start-10">
             <h4 className="text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Navigation</h4>
             <nav className="grid grid-cols-1 gap-4 text-sm">
               <Link to="/" className="text-slate-400 hover:text-purple-400 transition-colors flex items-center gap-2">
@@ -80,19 +58,8 @@ const Footer = () => {
 
           {/* Custom Presenter Credits */}
           <div className="flex flex-col md:flex-row items-center gap-6 bg-purple-500/5 px-6 py-4 rounded-2xl border border-purple-500/10">
-            <span className="text-[10px] uppercase tracking-widest text-purple-400 font-black">Presented by:</span>
-            
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="text-center md:text-left">
-                <p className="text-white font-bold text-sm">Rtr. Mustafa Ezzi</p>
-                <p className="text-[10px] text-slate-500 uppercase tracking-tighter">Club IT Chair</p>
-              </div>
-              <div className="hidden md:block w-px h-6 bg-white/10"></div>
-              <div className="text-center md:text-left">
-                <p className="text-white font-bold text-sm">Rtr. Lamiya Antaria</p>
-                <p className="text-[10px] text-slate-500 uppercase tracking-tighter">Club President</p>
-              </div>
-            </div>
+            <span className="text-[10px] uppercase tracking-widest text-purple-400 font-black">Developed by:</span>
+            <p className="text-white font-bold text-sm">Mustafa Moiz Ezzy</p>
           </div>
 
         </div>

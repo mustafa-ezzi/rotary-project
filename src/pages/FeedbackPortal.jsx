@@ -71,7 +71,7 @@ const FeedbackPortal = () => {
             </div>
           </div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-cyan-200">
-            CyberShield Safe City
+            CyberShield
           </p>
           <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
             Feedback Portal
